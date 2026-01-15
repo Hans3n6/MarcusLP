@@ -32,7 +32,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-300 mb-8">
-            Full-Stack Developer | Waseca, MN
+            Web Developer | Waseca, MN
           </p>
 
           <p className="text-lg md:text-xl text-gray-400 mb-16 max-w-3xl mx-auto">
