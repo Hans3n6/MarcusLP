@@ -23,9 +23,9 @@ export default function Hero() {
         {/* Hero Image - Right Side */}
         <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden md:block">
           <img
-            src="/marcus-football.png"
+            src="/marcus-football-nobg.png"
             alt="Marcus Hansen in football uniform"
-            className="h-full w-full object-cover object-center opacity-25"
+            className="h-full w-full object-contain object-center opacity-25"
           />
         </div>
       </div>
