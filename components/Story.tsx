@@ -67,8 +67,8 @@ export default function Story() {
               <p className="text-lg text-gray-300 leading-relaxed mb-8 max-w-3xl mx-auto">
                 After being dismissed from a university for my sexual orientation, I found
                 an inclusive home at Minnesota State Mankato, where I could be both an athlete
-                and my authentic self. This experience drives my commitment to creating
-                inclusive technology.
+                and my authentic self. Overcoming this adversity taught me resilience and
+                perseverance—qualities I bring to every project.
               </p>
               <a
                 href="https://www.startribune.com/how-inclusive-culture-brought-an-all-america-pass-rusher-to-mankato/601552524"
