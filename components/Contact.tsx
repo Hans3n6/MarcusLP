@@ -33,7 +33,7 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('https://bch373dmuztrnjfps6npstryge0nsaoo.lambda-url.us-east-1.on.aws/', {
+      const response = await fetch('https://2j7sah5tsf4g4zgy4axqh7jkxa0doagi.lambda-url.us-east-1.on.aws/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
