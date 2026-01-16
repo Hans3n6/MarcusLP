@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Sparkles, TrendingUp, Users } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Services() {
   return (
@@ -93,6 +94,20 @@ export default function Services() {
                 </p>
               </motion.div>
             </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.6 }}
+              className="text-center mt-12"
+            >
+              <Link href="/pricing">
+                <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-xl font-semibold hover:from-cyan-400 hover:to-purple-400 transition-all transform hover:scale-105 shadow-lg hover:shadow-cyan-500/50">
+                  View Pricing & Packages
+                </button>
+              </Link>
+            </motion.div>
           </div>
         </motion.div>
       </div>
