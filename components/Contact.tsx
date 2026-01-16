@@ -33,9 +33,18 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      console.log('Form data:', data);
+      const response = await fetch('https://bch373dmuztrnjfps6npstryge0nsaoo.lambda-url.us-east-1.on.aws/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
       setIsSubmitted(true);
       reset();
 
@@ -43,6 +52,7 @@ export default function Contact() {
       setTimeout(() => setIsSubmitted(false), 5000);
     } catch (error) {
       console.error('Error submitting form:', error);
+      alert('Failed to send message. Please try again or email directly at marcush1802@gmail.com');
     } finally {
       setIsSubmitting(false);
     }
