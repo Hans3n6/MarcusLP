@@ -1,8 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Check, Sparkles, TrendingUp, Zap, Mail, Phone, Shield, Database, Clock, Star } from 'lucide-react';
+import { Check, Sparkles, TrendingUp, Zap, Shield, Clock, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
+import { stripeLinks } from '@/config/stripe';
 
 export default function PricingPage() {
   return (
@@ -14,7 +15,7 @@ export default function PricingPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 pb-2 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">
             Pricing & Packages
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
@@ -100,6 +101,16 @@ export default function PricingPage() {
                   <p className="text-sm text-gray-300"><strong className="text-purple-400">To Start:</strong> $50 down payment</p>
                 </div>
               </div>
+
+              <Link
+                href={stripeLinks.packages.starter}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full mt-6 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold px-6 py-3 rounded-xl hover:from-cyan-400 hover:to-purple-400 transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+              >
+                Get Started
+                <ExternalLink className="w-4 h-4" />
+              </Link>
             </motion.div>
 
             {/* Professional Package */}
@@ -108,11 +119,8 @@ export default function PricingPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-slate-800/50 backdrop-blur-sm rounded-3xl p-8 border-2 border-cyan-500/50 hover:border-cyan-400 transition-all relative"
+              className="bg-slate-800/50 backdrop-blur-sm rounded-3xl p-8 border border-slate-700 hover:border-purple-500/50 transition-all"
             >
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                MOST POPULAR
-              </div>
               <div className="inline-flex p-3 bg-cyan-900/30 rounded-xl mb-4">
                 <TrendingUp className="w-6 h-6 text-cyan-400" />
               </div>
@@ -164,6 +172,16 @@ export default function PricingPage() {
                   <p className="text-sm text-gray-300"><strong className="text-cyan-400">To Start:</strong> $100 down payment</p>
                 </div>
               </div>
+
+              <Link
+                href={stripeLinks.packages.professional}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full mt-6 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold px-6 py-3 rounded-xl hover:from-cyan-400 hover:to-purple-400 transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+              >
+                Get Started
+                <ExternalLink className="w-4 h-4" />
+              </Link>
             </motion.div>
 
             {/* Premium Package */}
@@ -233,6 +251,16 @@ export default function PricingPage() {
                   <p className="text-sm text-gray-300"><strong className="text-purple-400">To Start:</strong> $200 down payment</p>
                 </div>
               </div>
+
+              <Link
+                href={stripeLinks.packages.premium}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full mt-6 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold px-6 py-3 rounded-xl hover:from-cyan-400 hover:to-purple-400 transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+              >
+                Get Started
+                <ExternalLink className="w-4 h-4" />
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -259,14 +287,14 @@ export default function PricingPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700"
+              className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border-2 border-cyan-500/50"
             >
               <h3 className="text-2xl font-bold text-white mb-4">Essential</h3>
               <div className="mb-6">
                 <p className="text-cyan-400 text-3xl font-bold">$25<span className="text-lg text-gray-400">/month</span></p>
                 <p className="text-gray-400 text-sm">or $255/year (save 15%)</p>
               </div>
-              <ul className="space-y-3 text-sm text-gray-300">
+              <ul className="space-y-3 text-sm text-gray-300 mb-6">
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
                   <span>Domain renewal</span>
@@ -288,6 +316,16 @@ export default function PricingPage() {
                   <span>Email and phone support</span>
                 </li>
               </ul>
+
+              <Link
+                href={stripeLinks.carePlans.essential}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold px-6 py-3 rounded-xl hover:from-cyan-400 hover:to-purple-400 transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+              >
+                Subscribe Now
+                <ExternalLink className="w-4 h-4" />
+              </Link>
             </motion.div>
 
             {/* Standard Plan */}
@@ -303,7 +341,7 @@ export default function PricingPage() {
                 <p className="text-cyan-400 text-3xl font-bold">$45<span className="text-lg text-gray-400">/month</span></p>
                 <p className="text-gray-400 text-sm">or $460/year (save 15%)</p>
               </div>
-              <ul className="space-y-3 text-sm text-gray-300">
+              <ul className="space-y-3 text-sm text-gray-300 mb-6">
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
                   <span>Everything in Essential</span>
@@ -317,6 +355,16 @@ export default function PricingPage() {
                   <span>Monthly backups</span>
                 </li>
               </ul>
+
+              <Link
+                href={stripeLinks.carePlans.standard}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold px-6 py-3 rounded-xl hover:from-cyan-400 hover:to-purple-400 transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+              >
+                Subscribe Now
+                <ExternalLink className="w-4 h-4" />
+              </Link>
             </motion.div>
 
             {/* Growth Plan */}
@@ -325,14 +373,14 @@ export default function PricingPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700"
+              className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border-2 border-cyan-500/50"
             >
               <h3 className="text-2xl font-bold text-white mb-4">Growth</h3>
               <div className="mb-6">
                 <p className="text-cyan-400 text-3xl font-bold">$75<span className="text-lg text-gray-400">/month</span></p>
                 <p className="text-gray-400 text-sm">or $765/year (save 15%)</p>
               </div>
-              <ul className="space-y-3 text-sm text-gray-300">
+              <ul className="space-y-3 text-sm text-gray-300 mb-6">
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
                   <span>Everything in Standard</span>
@@ -350,6 +398,16 @@ export default function PricingPage() {
                   <span>Priority support</span>
                 </li>
               </ul>
+
+              <Link
+                href={stripeLinks.carePlans.growth}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold px-6 py-3 rounded-xl hover:from-cyan-400 hover:to-purple-400 transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+              >
+                Subscribe Now
+                <ExternalLink className="w-4 h-4" />
+              </Link>
             </motion.div>
           </div>
 

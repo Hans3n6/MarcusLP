@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Mail, MapPin, Send } from 'lucide-react';
+import { Send } from 'lucide-react';
 import { useState } from 'react';
 
 const contactSchema = z.object({
@@ -124,7 +124,7 @@ export default function Contact() {
                   className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors"
                 >
                   <option value="">Select a project type</option>
-                  <option value="full-stack">Full-Stack Development</option>
+                  <option value="web-page">Web Page Development</option>
                   <option value="ai-integration">AI Integration</option>
                   <option value="ecommerce">E-commerce Platform</option>
                   <option value="consulting">Technical Consulting</option>
