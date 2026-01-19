@@ -24,9 +24,9 @@ export const stripeLinks = {
    * Final payments (remaining 50%) are handled via Stripe Invoicing after project completion
    */
   packages: {
-    starter: 'https://buy.stripe.com/test_28EaEX6GDdnQ1eqehyew800',      // $50 down payment
-    professional: 'https://buy.stripe.com/test_aFa5kD2qncjMg9kdduew802', // $100 down payment
-    premium: 'https://buy.stripe.com/test_eVq9ATaWTerUg9k3CUew803'       // $200 down payment
+    starter: 'https://buy.stripe.com/dRm6oH8RufZE63GcV8d3i02',      // $50 down payment
+    professional: 'https://buy.stripe.com/5kQ6oHaZCbJogIk08md3i03', // $100 down payment
+    premium: 'https://buy.stripe.com/00waEXffS7t84ZC2gud3i04'       // $200 down payment
   },
 
   /**
@@ -34,9 +34,9 @@ export const stripeLinks = {
    * Replace these URLs with your Stripe Subscription Links
    */
   carePlans: {
-    essential: 'https://buy.stripe.com/test_fZu5kDghdcjM2iu8Xeew804',    // $25/month - Essential Plan
-    standard: 'https://buy.stripe.com/test_8x28wPc0XbfI5uGgpGew805',     // $45/month - Standard Plan
-    growth: 'https://buy.stripe.com/test_5kQ6oH3urfvY1eq7Taew806'        // $75/month - Growth Plan
+    essential: 'https://buy.stripe.com/aFa28r2t6bJo1NqdZcd3i05',    // $25/month - Essential Plan
+    standard: 'https://buy.stripe.com/bJecN51p2aFkbo0dZcd3i06',     // $45/month - Standard Plan
+    growth: 'https://buy.stripe.com/dRmeVd2t6dRwajWf3gd3i07'        // $75/month - Growth Plan
   }
 };
 

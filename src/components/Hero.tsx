@@ -5,8 +5,8 @@ import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Hero() {
-  const scrollToProjects = () => {
-    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToServices = () => {
+    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const scrollToContact = () => {
@@ -61,15 +61,6 @@ export default function Hero() {
             </Link>
 
             <motion.button
-              onClick={scrollToProjects}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all shadow-lg hover:shadow-purple-500/50"
-            >
-              View Projects
-            </motion.button>
-
-            <motion.button
               onClick={scrollToContact}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -91,7 +82,7 @@ export default function Hero() {
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
             className="cursor-pointer"
-            onClick={scrollToProjects}
+            onClick={scrollToServices}
           >
             <ChevronDown className="w-8 h-8 text-gray-400" />
           </motion.div>

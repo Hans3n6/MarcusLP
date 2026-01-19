@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Check, Sparkles, TrendingUp, Zap, Shield, Clock, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { stripeLinks } from '@/config/stripe';
+import Footer from '@/components/Footer';
 
 export default function PricingPage() {
   return (
@@ -598,14 +599,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="w-full py-8 px-6 border-t border-slate-700">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Marcus Hansen | Waseca, MN
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }
