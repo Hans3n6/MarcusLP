@@ -46,7 +46,7 @@ export default function Hero() {
           </h2>
 
           <p className="text-lg md:text-xl text-gray-400 mb-16 max-w-3xl mx-auto">
-            Get found by AI models like ChatGPT, Claude, and Perplexity. AI search is reshaping how people find information. We help businesses rank in generative engine results and get cited by AI models worldwide.
+            Get found by AI models like ChatGPT, Claude, Gemini, and Perplexity. AI search is reshaping how people find information. We help businesses rank in generative engine results and get cited by AI models worldwide.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
