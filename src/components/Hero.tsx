@@ -60,11 +60,21 @@ export default function Hero() {
               </motion.button>
             </Link>
 
+            <Link href="/blog">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-full sm:w-auto px-8 py-4 bg-slate-800 text-white rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700 hover:border-slate-600"
+              >
+                Read Our Blog
+              </motion.button>
+            </Link>
+
             <motion.button
               onClick={scrollToContact}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-slate-800 text-white rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700 hover:border-slate-600"
+              className="w-full sm:w-auto px-8 py-4 bg-slate-800 text-white rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700 hover:border-slate-600"
             >
               Free GEO Audit
             </motion.button>
