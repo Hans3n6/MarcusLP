@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Sparkles, TrendingUp, Users } from 'lucide-react';
+import { Brain, BarChart3, Shield } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Services() {
@@ -16,7 +16,7 @@ export default function Services() {
           className="text-center mb-24"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">
-            What I Do
+            Our GEO Services
           </h2>
         </motion.div>
 
@@ -30,12 +30,11 @@ export default function Services() {
           <div className="space-y-12 text-center">
             <div>
               <h3 className="text-2xl font-bold text-white mb-6">
-                Empowering Rural Businesses
+                Get Found by AI Models
               </h3>
               <p className="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto mb-8">
-                I specialize in creating professional landing pages for small businesses in rural communities
-                that don't have an online presence. My mission is to help local businesses increase brand
-                awareness, drive traffic, and boost profits through modern web solutions.
+                AI search is the future. ChatGPT, Claude, Perplexity, and other generative AI models are becoming primary search engines.
+                We help businesses optimize for AI visibility, get cited in AI responses, and build the authority signals that AI models trust.
               </p>
             </div>
 
@@ -48,13 +47,13 @@ export default function Services() {
                 className="text-center"
               >
                 <div className="inline-flex p-4 bg-purple-900/30 rounded-xl mb-6">
-                  <Sparkles className="w-8 h-8 text-purple-400" />
+                  <Brain className="w-8 h-8 text-purple-400" />
                 </div>
                 <h4 className="text-xl font-semibold text-white mb-4">
-                  Brand Awareness
+                  AI Content Strategy
                 </h4>
                 <p className="text-gray-300 leading-relaxed">
-                  Establish your online presence with a professional landing page that showcases your business
+                  Optimize your content to rank in AI model outputs. We structure data and create content that AI systems prefer to cite.
                 </p>
               </motion.div>
 
@@ -66,13 +65,13 @@ export default function Services() {
                 className="text-center"
               >
                 <div className="inline-flex p-4 bg-cyan-900/30 rounded-xl mb-6">
-                  <TrendingUp className="w-8 h-8 text-cyan-400" />
+                  <BarChart3 className="w-8 h-8 text-cyan-400" />
                 </div>
                 <h4 className="text-xl font-semibold text-white mb-4">
-                  Increase Traffic
+                  E-E-A-T Building
                 </h4>
                 <p className="text-gray-300 leading-relaxed">
-                  Drive more customers to your business with a modern, mobile-friendly website
+                  Build Experience, Expertise, Authoritativeness, and Trustworthiness signals that AI models use to evaluate sources.
                 </p>
               </motion.div>
 
@@ -84,13 +83,13 @@ export default function Services() {
                 className="text-center"
               >
                 <div className="inline-flex p-4 bg-blue-900/30 rounded-xl mb-6">
-                  <Users className="w-8 h-8 text-blue-400" />
+                  <Shield className="w-8 h-8 text-blue-400" />
                 </div>
                 <h4 className="text-xl font-semibold text-white mb-4">
-                  Grow Profits
+                  Multi-Model Optimization
                 </h4>
                 <p className="text-gray-300 leading-relaxed">
-                  Convert online visitors into customers and grow your revenue
+                  Ensure visibility across ChatGPT, Claude, Perplexity, Google AI Overviews, and emerging AI search platforms.
                 </p>
               </motion.div>
             </div>
@@ -104,7 +103,7 @@ export default function Services() {
             >
               <Link href="/pricing">
                 <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-xl font-semibold hover:from-cyan-400 hover:to-purple-400 transition-all transform hover:scale-105 shadow-lg hover:shadow-cyan-500/50">
-                  View Pricing & Packages
+                  View GEO Plans
                 </button>
               </Link>
             </motion.div>

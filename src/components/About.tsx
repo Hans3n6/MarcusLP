@@ -2,14 +2,14 @@
 
 import { motion } from 'framer-motion';
 import { about, skills } from '@/data/about';
-import { Code2, Brain, Cloud, Workflow } from 'lucide-react';
+import { Zap, BookOpen, Shield, Code2, BarChart3 } from 'lucide-react';
 
 const iconMap: { [key: string]: any } = {
-  'Frontend': Code2,
-  'Backend': Workflow,
-  'AI/ML': Brain,
-  'Cloud & DevOps': Cloud,
-  'Integrations': Workflow
+  'AI Platforms': Zap,
+  'Content Strategy': BookOpen,
+  'E-E-A-T Building': Shield,
+  'Technical Implementation': Code2,
+  'Analytics & Monitoring': BarChart3
 };
 
 export default function About() {
@@ -24,8 +24,11 @@ export default function About() {
           className="text-center mb-24"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">
-            Technical Expertise
+            GEO Expertise
           </h2>
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+            Specialized knowledge in optimizing businesses for AI discovery and generative engine visibility
+          </p>
         </motion.div>
 
         {/* Skills Section */}

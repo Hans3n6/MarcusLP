@@ -1,0 +1,21 @@
+{
+  "recommendations": [
+    // Next.js & React
+    "dsznajder.es7-react-js-snippets",
+    "dbaeumer.vscode-eslint",
+
+    // TypeScript
+    "ms-vscode.vscode-typescript-next",
+
+    // Tailwind CSS (if using)
+    "bradlc.vscode-tailwindcss",
+
+    // Git
+    "eamodio.gitlens",
+
+    // General productivity
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense"
+  ]
+}

@@ -5,62 +5,58 @@ export interface Skill {
 
 export const skills: Skill[] = [
   {
-    category: 'Frontend',
+    category: 'AI Platforms',
     items: [
-      'React',
-      'Next.js 14-16',
-      'TypeScript',
-      'Tailwind CSS',
-      'Responsive Design',
-      'React Hook Form',
-      'Zod Validation',
-      'Framer Motion'
+      'ChatGPT Optimization',
+      'Claude Integration',
+      'Perplexity Search',
+      'Google AI Overviews',
+      'Emerging AI Models',
+      'Cross-platform Strategy'
     ]
   },
   {
-    category: 'Backend',
+    category: 'Content Strategy',
     items: [
-      'Python',
-      'FastAPI',
-      'SQLAlchemy',
-      'Node.js',
-      'Express',
-      'PostgreSQL',
-      'SQLite',
-      'RESTful APIs'
+      'AI-Preferred Content Structure',
+      'Query Targeting for AI',
+      'Citation-Worthy Content',
+      'Topic Clustering',
+      'Content Audit & Optimization',
+      'Multi-format Optimization'
     ]
   },
   {
-    category: 'AI/ML',
+    category: 'E-E-A-T Building',
     items: [
-      'AWS Bedrock',
-      'Claude API',
-      'Semantic Search',
-      'Embeddings',
-      'Natural Language Processing',
-      'ML Classification'
+      'Experience Signals',
+      'Expertise Development',
+      'Authoritativeness Metrics',
+      'Trustworthiness Signals',
+      'Credibility Building',
+      'Author Authority'
     ]
   },
   {
-    category: 'Cloud & DevOps',
+    category: 'Technical Implementation',
     items: [
-      'AWS (EC2, Lambda, S3, RDS, Bedrock)',
-      'Docker',
-      'Terraform',
-      'GitHub Actions',
-      'Nginx',
-      'PM2'
+      'Schema Markup (JSON-LD)',
+      'Structured Data',
+      'Meta Tags Optimization',
+      'Website Architecture',
+      'Performance Optimization',
+      'Mobile Optimization'
     ]
   },
   {
-    category: 'Integrations',
+    category: 'Analytics & Monitoring',
     items: [
-      'Authorize.net',
-      'Stripe',
-      'Google API',
-      'Microsoft Graph',
-      'OAuth 2.0',
-      'Third-party APIs'
+      'AI Model Tracking',
+      'Search Performance',
+      'Citation Monitoring',
+      'Visibility Metrics',
+      'Competitive Analysis',
+      'GEO Reporting'
     ]
   }
 ];
@@ -68,14 +64,14 @@ export const skills: Skill[] = [
 export const about = {
   hometown: 'Waseca, Minnesota',
   background: 'Former collegiate athlete (walk-on → All-American) demonstrating work ethic and determination',
-  perspective: 'LGBTQ+ advocate bringing unique viewpoint to inclusive product design',
-  transition: 'Applied athletic discipline to mastering full-stack development',
-  current: 'Full-stack developer specializing in AI integration and e-commerce platforms',
-  availability: 'Available for consulting and development projects',
+  perspective: 'Unique ability to solve complex technical challenges with strategic thinking',
+  transition: 'Applied athletic discipline to mastering AI optimization and digital strategy',
+  current: 'GEO specialist helping businesses rank in AI search results and get cited by generative models',
+  availability: 'Available for GEO consulting and optimization projects',
   services: [
-    'Full-stack development projects',
-    'AI integration consulting',
-    'E-commerce platform builds',
-    'AWS cloud architecture'
+    'Generative Engine Optimization (GEO)',
+    'AI Content Strategy',
+    'E-E-A-T Authority Building',
+    'Multi-Model Optimization'
   ]
 };

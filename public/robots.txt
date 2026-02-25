@@ -1,0 +1,22 @@
+# AI Search Engine Bots - ALLOWED
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Block all other bots
+User-agent: *
+Disallow: /
+
+# Sitemap location (update if you have a sitemap)
+# Sitemap: https://hansenwebservices.com/sitemap.xml

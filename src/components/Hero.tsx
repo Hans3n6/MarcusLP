@@ -38,15 +38,15 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-10 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">
-            Marcus Hansen
+            Generative Engine Optimization
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-300 mb-8">
-            Web Developer | Waseca, MN
+            Get Found By AI | ChatGPT, Claude, Perplexity & Beyond
           </p>
 
           <p className="text-lg md:text-xl text-gray-400 mb-16 max-w-3xl mx-auto">
-            Helping small businesses in rural communities grow online with professional landing pages
+            AI search is reshaping how people find information. We help businesses rank in generative engine results and get cited by AI models worldwide.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -66,7 +66,7 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-slate-800 text-white rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700 hover:border-slate-600"
             >
-              Get in Touch
+              Free GEO Audit
             </motion.button>
           </div>
         </motion.div>

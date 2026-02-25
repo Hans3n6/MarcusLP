@@ -1,0 +1,36 @@
+{
+  // File Explorer Organization
+  "explorer.sortOrder": "type",
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "package.json": "package-lock.json, tsconfig.json, next.config.ts, next-env.d.ts, postcss.config.mjs, eslint.config.mjs, .gitignore",
+    "README.md": "amplify.yml",
+    "*.ts": "${capture}.js, ${capture}.d.ts",
+    "*.tsx": "${capture}.ts, ${capture}.js"
+  },
+
+  // Hide build and dependency folders from explorer
+  "files.exclude": {
+    "**/.git": true,
+    "**/.next": true,
+    "**/node_modules": true,
+    "**/out": true
+  },
+
+  // Search exclusions
+  "search.exclude": {
+    "**/.next": true,
+    "**/node_modules": true,
+    "**/out": true,
+    "**/archive": false
+  },
+
+  // Folder-specific settings
+  "explorer.compactFolders": false,
+
+  // File associations
+  "files.associations": {
+    "*.css": "css"
+  }
+}
