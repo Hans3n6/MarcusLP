@@ -1,15 +1,18 @@
 /**
  * Stripe Payment and Subscription Links Configuration
+ * GEO (Generative Engine Optimization) Pricing Model
  *
  * SETUP INSTRUCTIONS:
- * 1. Create a Stripe account at https://stripe.com
- * 2. Complete business verification (SSN, bank account)
- * 3. Create Products in Stripe Dashboard:
- *    - Website Packages (one-time payments)
- *    - Care Plans (monthly subscriptions)
- * 4. Generate Payment Links for each product
- * 5. Replace placeholder URLs below with your actual Stripe links
- * 6. Configure redirect URLs in Stripe:
+ * 1. Log into your Stripe Dashboard at https://dashboard.stripe.com
+ * 2. Create Products for each service:
+ *    - GEO Audit & Strategy (one-time payment)
+ *    - Starter GEO Plan (monthly subscription)
+ *    - Professional GEO Plan (monthly subscription)
+ *    - Premium GEO Plan (monthly subscription)
+ *    - Website Add-on (optional, one-time or subscription)
+ * 3. Generate Payment Links for each product
+ * 4. Replace placeholder URLs below with your actual Stripe links
+ * 5. Configure redirect URLs in Stripe:
  *    - Success: https://hansenwebservices.com/payment/success
  *    - Cancel: https://hansenwebservices.com/payment/cancel
  *
@@ -19,68 +22,84 @@
 
 export const stripeLinks = {
   /**
-   * Website Package Down Payment Links (50% deposits)
-   * These are shown on the pricing page for initial payment
-   * Final payments (remaining 50%) are handled via Stripe Invoicing after project completion
+   * GEO One-Time Services
    */
-  packages: {
-    starter: 'https://buy.stripe.com/dRm6oH8RufZE63GcV8d3i02',      // $50 down payment
-    professional: 'https://buy.stripe.com/5kQ6oHaZCbJogIk08md3i03', // $100 down payment
-    premium: 'https://buy.stripe.com/00waEXffS7t84ZC2gud3i04'       // $200 down payment
+  services: {
+    geoAudit: 'https://buy.stripe.com/placeholder_geo_audit_link',  // $500-1,500 one-time
   },
 
   /**
-   * Care Plan Subscription Links (Recurring monthly billing)
-   * Replace these URLs with your Stripe Subscription Links
+   * GEO Monthly Subscription Plans
    */
-  carePlans: {
-    essential: 'https://buy.stripe.com/aFa28r2t6bJo1NqdZcd3i05',    // $25/month - Essential Plan
-    standard: 'https://buy.stripe.com/bJecN51p2aFkbo0dZcd3i06',     // $45/month - Standard Plan
-    growth: 'https://buy.stripe.com/dRmeVd2t6dRwajWf3gd3i07'        // $75/month - Growth Plan
+  geoPlans: {
+    starter: 'https://buy.stripe.com/placeholder_starter_geo_link',      // $300/month - Starter GEO Plan
+    professional: 'https://buy.stripe.com/placeholder_professional_geo_link', // $1,000/month - Professional GEO Plan
+    premium: 'https://buy.stripe.com/placeholder_premium_geo_link'        // $2,500+/month - Premium GEO Plan
+  },
+
+  /**
+   * Website Services (Optional Add-on)
+   */
+  website: {
+    // Can be a one-time payment or monthly retainer
+    // Link to be added when website services are set up
+    addon: 'https://buy.stripe.com/placeholder_website_addon_link'
   }
 };
 
 /**
- * Package Details - For reference and validation
+ * GEO Service Details - For reference and validation
  */
-export const packageDetails = {
-  starter: {
-    name: 'Starter Package',
-    priceRange: '150-300',
-    downPayment: 50,
-    description: 'Simple 1-3 page website with business info, hours, and contact'
-  },
-  professional: {
-    name: 'Professional Package',
-    priceRange: '400-700',
-    downPayment: 100,
-    description: 'Larger website (5-7 pages) with services, gallery, and better Google visibility'
-  },
-  premium: {
-    name: 'Premium Package',
-    priceRange: '800-1200',
-    downPayment: 200,
-    description: 'Full website (8+ pages) with custom look and advanced features'
+export const geoServiceDetails = {
+  audit: {
+    name: 'GEO Audit & Strategy',
+    priceRange: '500-1500',
+    description: 'Comprehensive analysis of your online presence across AI models with actionable roadmap',
+    isOneTime: true
   }
 };
 
-export const carePlanDetails = {
-  essential: {
-    name: 'Essential Plan',
-    price: 25,
+/**
+ * GEO Plan Details - For reference and validation
+ */
+export const geoPlanDetails = {
+  starter: {
+    name: 'Starter GEO Plan',
+    price: 300,
     billingPeriod: 'monthly',
-    description: 'Domain renewal, hosting, security updates, and up to 15 min changes/month'
+    description: 'Monthly content audit & optimization, Structured data/schema setup, E-E-A-T signals monitoring (3-5 AI models), Basic AI model feature optimization, Monthly performance report'
   },
-  standard: {
-    name: 'Standard Plan',
-    price: 45,
+  professional: {
+    name: 'Professional GEO Plan',
+    price: 1000,
     billingPeriod: 'monthly',
-    description: 'Everything in Essential plus 30 min changes/month and monthly backups'
+    description: 'All Starter features + Advanced content strategy for AI models, E-E-A-T building & authority strategy, Optimization across 8+ AI platforms, Content calendar management, Quarterly strategy consultation, Priority support'
   },
-  growth: {
-    name: 'Growth Plan',
-    price: 75,
+  premium: {
+    name: 'Premium GEO Plan',
+    price: 2500,
     billingPeriod: 'monthly',
-    description: 'Everything in Standard plus 1 hour changes/month and priority support'
+    description: 'All Professional features + Custom AI positioning strategy, Multi-format content optimization, Featured snippet/AI overview targeting, Competitor GEO tracking & analysis, Monthly AI trend analysis, Direct access to Marcus'
+  }
+};
+
+/**
+ * Legacy Web Development Packages (if still offering as add-on)
+ */
+export const websitePackageDetails = {
+  starter: {
+    name: 'Starter Website',
+    priceRange: '150-300',
+    description: 'Simple 1-3 page website'
+  },
+  professional: {
+    name: 'Professional Website',
+    priceRange: '400-700',
+    description: 'Larger website (5-7 pages) with advanced features'
+  },
+  premium: {
+    name: 'Premium Website',
+    priceRange: '800-1200',
+    description: 'Full custom website (8+ pages) with all features'
   }
 };
