@@ -37,16 +37,16 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-10 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">
-            Generative Engine Optimization
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">
+            Hansen Web Services
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-300 mb-8">
-            Get Found By AI | ChatGPT, Claude, Perplexity & Beyond
-          </p>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-cyan-300">
+            Generative Engine Optimization (GEO)
+          </h2>
 
           <p className="text-lg md:text-xl text-gray-400 mb-16 max-w-3xl mx-auto">
-            AI search is reshaping how people find information. We help businesses rank in generative engine results and get cited by AI models worldwide.
+            Get found by AI models like ChatGPT, Claude, and Perplexity. AI search is reshaping how people find information. We help businesses rank in generative engine results and get cited by AI models worldwide.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
