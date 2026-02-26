@@ -1,0 +1,92 @@
+name: Scheduled Blog Post Deployment
+
+on:
+  schedule:
+    # March 10, 2026 at 8:00 AM CST (14:00 UTC)
+    - cron: '0 14 10 3 *'
+    # March 17, 2026 at 8:00 AM CST (14:00 UTC)
+    - cron: '0 14 17 3 *'
+    # March 24, 2026 at 8:00 AM CST (14:00 UTC)
+    - cron: '0 14 24 3 *'
+    # March 31, 2026 at 8:00 AM CST (14:00 UTC)
+    - cron: '0 14 31 3 *'
+    # April 7, 2026 at 8:00 AM CST (14:00 UTC)
+    - cron: '0 14 7 4 *'
+    # April 14, 2026 at 8:00 AM CST (14:00 UTC)
+    - cron: '0 14 14 4 *'
+  workflow_dispatch:
+
+jobs:
+  deploy-blog-post:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine blog post to deploy
+        id: determine_post
+        run: |
+          CURRENT_DATE=$(date -u +%Y-%m-%d)
+
+          case "$CURRENT_DATE" in
+            2026-03-10)
+              echo "post_name=ai-search-digital-marketing" >> $GITHUB_OUTPUT
+              echo "post_title=Digital Marketing Blog Post" >> $GITHUB_OUTPUT
+              ;;
+            2026-03-17)
+              echo "post_name=ai-search-business-owners" >> $GITHUB_OUTPUT
+              echo "post_title=Business Owners Blog Post" >> $GITHUB_OUTPUT
+              ;;
+            2026-03-24)
+              echo "post_name=ai-search-developers" >> $GITHUB_OUTPUT
+              echo "post_title=Developers Blog Post" >> $GITHUB_OUTPUT
+              ;;
+            2026-03-31)
+              echo "post_name=ai-search-small-business" >> $GITHUB_OUTPUT
+              echo "post_title=Small Business Blog Post" >> $GITHUB_OUTPUT
+              ;;
+            2026-04-07)
+              echo "post_name=ai-search-reshaping-web" >> $GITHUB_OUTPUT
+              echo "post_title=AI Search Reshaping Web Blog Post" >> $GITHUB_OUTPUT
+              ;;
+            2026-04-14)
+              echo "post_name=geo-30-day-follow-up" >> $GITHUB_OUTPUT
+              echo "post_title=30-Day Follow-up Blog Post" >> $GITHUB_OUTPUT
+              ;;
+            *)
+              echo "post_name=unknown" >> $GITHUB_OUTPUT
+              echo "post_title=Unknown Blog Post" >> $GITHUB_OUTPUT
+              ;;
+          esac
+
+      - name: Configure Git
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action Bot"
+
+      - name: Create deployment commit
+        if: steps.determine_post.outputs.post_name != 'unknown'
+        run: |
+          # Create an empty commit to trigger Amplify deployment
+          git commit --allow-empty -m "Deploy: ${{ steps.determine_post.outputs.post_title }} (${{ steps.determine_post.outputs.post_name }})
+
+          Scheduled blog post deployment via GitHub Actions
+          Post: src/app/blog/${{ steps.determine_post.outputs.post_name }}/page.tsx
+          Timestamp: $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+
+      - name: Push to main branch
+        if: steps.determine_post.outputs.post_name != 'unknown'
+        run: |
+          git push origin main
+
+      - name: Notify deployment
+        if: steps.determine_post.outputs.post_name != 'unknown'
+        run: |
+          echo "✅ Blog post deployment triggered: ${{ steps.determine_post.outputs.post_title }}"
+          echo "Post: ${{ steps.determine_post.outputs.post_name }}"
+          echo "Timestamp: $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
