@@ -1,28 +1,17 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { blogPosts } from '@/data/blog';
-import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Calendar, Clock, ArrowLeft, Tag } from 'lucide-react';
 import { SocialShare } from '@/components/SocialShare';
 import Footer from '@/components/Footer';
 import ReactMarkdown from 'react-markdown';
 
-interface BlogPostPageProps {
-  params: Promise<{
-    slug: string;
-  }>;
-}
+const post = blogPosts.find((p) => p.slug === 'what-is-geo')!;
+const postUrl = `https://hansenwebservices.com/blog/what-is-geo`;
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const { slug } = await params;
-  const post = blogPosts.find((p) => p.slug === slug);
-
-  if (!post) {
-    notFound();
-  }
-
-  const postUrl = `https://hansenwebservices.com/blog/${post.slug}`;
-
+export default function BlogPostPage() {
   return (
     <main className="min-h-screen w-full bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
       {/* Back Button */}
