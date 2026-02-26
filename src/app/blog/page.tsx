@@ -13,6 +13,16 @@ export default function BlogPage() {
       <div className="w-full pt-24 pb-16 px-6 bg-gradient-to-b from-slate-900 to-slate-800">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="mb-6"
+          >
+            <Link href="/" className="inline-block text-cyan-400 hover:text-cyan-300 font-semibold transition-colors mb-4">
+              ← Back to Home
+            </Link>
+          </motion.div>
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
