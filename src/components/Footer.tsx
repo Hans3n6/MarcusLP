@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Phone, Mail } from 'lucide-react';
+import { Phone, Mail, Reddit } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -15,7 +15,7 @@ export default function Footer() {
               Hansen Web Services
             </h3>
             <p className="text-gray-400 text-sm">
-              Professional landing pages for rural businesses in Waseca, MN and beyond.
+              Helping businesses get found by AI models. Expert GEO consulting for the AI search era.
             </p>
           </div>
 
@@ -68,6 +68,15 @@ export default function Footer() {
               >
                 <Mail className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform" />
                 <span>contact@hansenwebservices.com</span>
+              </a>
+              <a
+                href="https://www.reddit.com/user/HansenWebServices/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors text-sm group"
+              >
+                <Reddit className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform" />
+                <span>Join us on Reddit</span>
               </a>
             </div>
           </div>

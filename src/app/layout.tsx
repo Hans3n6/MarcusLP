@@ -13,14 +13,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Marcus Hansen | Landing Pages for Rural Businesses | Waseca, MN",
-  description: "Full-stack developer from Waseca, MN creating professional landing pages for small businesses in rural communities. Increase brand awareness, traffic, and profits with modern web solutions.",
-  keywords: ["landing pages", "rural businesses", "small business websites", "Waseca Minnesota", "web development", "brand awareness", "Next.js", "React", "TypeScript"],
+  title: "Hansen Web Services | Generative Engine Optimization (GEO) Agency",
+  description: "Get found by AI models like ChatGPT, Claude, and Perplexity. Hansen Web Services helps businesses optimize for AI-powered search through proven GEO strategies and E-E-A-T building.",
+  keywords: ["GEO", "Generative Engine Optimization", "AI search optimization", "ChatGPT visibility", "Claude optimization", "Perplexity ranking", "AI SEO", "E-E-A-T", "AI models", "AI search"],
   authors: [{ name: "Marcus Hansen" }],
+  metadataBase: new URL("https://hansenwebservices.com"),
   openGraph: {
-    title: "Marcus Hansen | Landing Pages for Rural Businesses",
-    description: "Helping small businesses in rural communities grow online with professional landing pages.",
+    title: "Hansen Web Services | Generative Engine Optimization (GEO) Agency",
+    description: "Get found by AI models like ChatGPT, Claude, and Perplexity. Expert GEO consulting for the AI search era.",
     type: "website",
+    url: "https://hansenwebservices.com",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hansen Web Services | GEO Agency",
+    description: "Get found by AI models. Expert Generative Engine Optimization.",
   },
 };
 

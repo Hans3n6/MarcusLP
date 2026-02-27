@@ -69,7 +69,7 @@ export default function Contact() {
           className="text-center mb-24"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">
-            Get In Touch
+            Start with a Free GEO Audit
           </h2>
         </motion.div>
 
@@ -124,6 +124,7 @@ export default function Contact() {
                   className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-purple-500 transition-colors"
                 >
                   <option value="">Select a project type</option>
+                  <option value="geo-consulting">GEO Consulting</option>
                   <option value="web-page">Web Page Development</option>
                   <option value="ai-integration">AI Integration</option>
                   <option value="ecommerce">E-commerce Platform</option>
@@ -189,7 +190,7 @@ export default function Contact() {
           >
             <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 text-center">
               <p className="text-gray-300 leading-relaxed text-lg max-w-2xl mx-auto">
-                Available for landing page development and consulting projects.
+                Specializing in Generative Engine Optimization and AI search strategy.
                 <br />
                 <span className="text-white font-semibold">Response within 24 hours</span>
               </p>
