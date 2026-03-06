@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Phone, Mail, Reddit } from 'lucide-react';
+import { Phone, Mail, MessageSquare } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -36,6 +36,11 @@ export default function Footer() {
               <li>
                 <Link href="/blog" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
                   Blog
+                </Link>
+              </li>
+              <li>
+                <Link href="/audit" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+                  Free GEO Audit
                 </Link>
               </li>
               <li>
@@ -75,7 +80,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors text-sm group"
               >
-                <Reddit className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform" />
+                <MessageSquare className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform" />
                 <span>Join us on Reddit</span>
               </a>
             </div>

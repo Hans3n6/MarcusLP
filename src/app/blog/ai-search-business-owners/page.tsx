@@ -9,7 +9,7 @@ import ReactMarkdown from 'react-markdown';
 
 const post = {
   slug: 'ai-search-business-owners',
-  title: 'Your Business Probably Isn't Optimized for AI Search',
+  title: "Your Business Probably Isn't Optimized for AI Search",
   excerpt: 'Why business owners need to prepare for AI search now, and how this shift actually levels the playing field against bigger competitors.',
   date: '2026-03-17',
   readingTime: 9,

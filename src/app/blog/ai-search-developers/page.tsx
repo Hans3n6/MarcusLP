@@ -54,21 +54,20 @@ Priority schemas for AI search:
 - **NewsArticle schema** for timely content
 
 Example implementation:
-```json
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Article Title",
-  "author": {
-    "@type": "Person",
-    "name": "Author Name",
-    "url": "https://example.com/authors/author-name",
-    "description": "Author credentials and expertise"
-  },
-  "datePublished": "2026-03-24",
-  "articleBody": "Content here..."
-}
-```
+
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Article Title",
+      "author": {
+        "@type": "Person",
+        "name": "Author Name",
+        "url": "https://example.com/authors/author-name",
+        "description": "Author credentials and expertise"
+      },
+      "datePublished": "2026-03-24",
+      "articleBody": "Content here..."
+    }
 
 ### 2. Author Information is Critical
 
