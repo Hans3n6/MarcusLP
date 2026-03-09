@@ -16,6 +16,7 @@ interface AuditCategoryCardProps {
   score: number;
   maxScore: number;
   findings: Finding[];
+  weight?: number;
 }
 
 const statusIcon = {
@@ -24,7 +25,7 @@ const statusIcon = {
   warn: <AlertTriangle className="w-5 h-5 text-yellow-400 flex-shrink-0" />,
 };
 
-export default function AuditCategoryCard({ label, score, maxScore, findings }: AuditCategoryCardProps) {
+export default function AuditCategoryCard({ label, score, maxScore, findings, weight }: AuditCategoryCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const percentage = maxScore > 0 ? (score / maxScore) * 100 : 0;
 
@@ -32,7 +33,14 @@ export default function AuditCategoryCard({ label, score, maxScore, findings }: 
     <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-semibold text-white">{label}</h3>
+        <div className="flex items-center gap-2">
+          <h3 className="text-lg font-semibold text-white">{label}</h3>
+          {weight != null && (
+            <span className="text-xs font-medium text-slate-300 bg-slate-600 px-2 py-0.5 rounded-full">
+              {weight}% weight
+            </span>
+          )}
+        </div>
         <span className="text-sm font-medium text-gray-300">
           {score}/{maxScore}
         </span>

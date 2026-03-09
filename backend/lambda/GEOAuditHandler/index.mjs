@@ -445,16 +445,177 @@ function getGrade(score) {
 }
 
 // ---------------------------------------------------------------------------
+// LLM-specific scoring
+// ---------------------------------------------------------------------------
+const MODEL_WEIGHTS = {
+  chatgpt: {
+    name: 'ChatGPT',
+    schemaMarkup: 20,
+    metaTags: 25,
+    contentStructure: 30,
+    aiAccessibility: 25,
+    description: 'Prioritizes E-E-A-T signals, author credentials, and comprehensive content. Uses Bing index.',
+  },
+  claude: {
+    name: 'Claude',
+    schemaMarkup: 15,
+    metaTags: 20,
+    contentStructure: 40,
+    aiAccessibility: 25,
+    description: 'Values original analysis, structured content, and penalizes marketing fluff. Uses Brave Search.',
+  },
+  perplexity: {
+    name: 'Perplexity',
+    schemaMarkup: 35,
+    metaTags: 20,
+    contentStructure: 25,
+    aiAccessibility: 20,
+    description: 'Structured data is critical. Weights freshness highest. Actively searches for comparison tables.',
+  },
+  gemini: {
+    name: 'Gemini',
+    schemaMarkup: 20,
+    metaTags: 35,
+    contentStructure: 20,
+    aiAccessibility: 25,
+    description: 'Leverages Google index. Traditional SEO signals like backlinks and domain authority matter most.',
+  },
+};
+
+function calculateModelScores(categories) {
+  const { schemaMarkup, metaTags, contentStructure, aiAccessibility } = categories;
+  const modelScores = {};
+
+  for (const [modelKey, weights] of Object.entries(MODEL_WEIGHTS)) {
+    // Weighted score: (rawScore / maxScore) * weight for each category
+    const weighted =
+      (schemaMarkup.score / schemaMarkup.maxScore) * weights.schemaMarkup +
+      (metaTags.score / metaTags.maxScore) * weights.metaTags +
+      (contentStructure.score / contentStructure.maxScore) * weights.contentStructure +
+      (aiAccessibility.score / aiAccessibility.maxScore) * weights.aiAccessibility;
+
+    const score = Math.round(weighted);
+
+    modelScores[modelKey] = {
+      score,
+      grade: getGrade(score),
+      name: weights.name,
+      description: weights.description,
+      weights: {
+        schemaMarkup: weights.schemaMarkup,
+        metaTags: weights.metaTags,
+        contentStructure: weights.contentStructure,
+        aiAccessibility: weights.aiAccessibility,
+      },
+      tips: generateModelTips(modelKey, categories),
+    };
+  }
+
+  return modelScores;
+}
+
+function generateModelTips(modelKey, categories) {
+  const tips = [];
+  const { schemaMarkup, metaTags, contentStructure, aiAccessibility } = categories;
+
+  // Helper to check if a specific check failed/is partial
+  const findCheck = (category, checkName) =>
+    category.findings.find(f => f.check === checkName);
+
+  if (modelKey === 'chatgpt') {
+    // ChatGPT cares most about author credentials and E-E-A-T
+    const authorCheck = findCheck(schemaMarkup, 'Article/Author schema');
+    if (authorCheck && authorCheck.status !== 'pass') {
+      tips.push('ChatGPT heavily weights author credentials. Add Article schema with detailed author info (name, credentials, expertise) to boost citation probability.');
+    }
+    const contentCheck = findCheck(contentStructure, 'Content length');
+    if (contentCheck && contentCheck.status !== 'pass') {
+      tips.push('ChatGPT favors comprehensive, authoritative content. Aim for 1,000+ words with clear expertise signals.');
+    }
+    const headingCheck = findCheck(contentStructure, 'Heading hierarchy');
+    if (headingCheck && headingCheck.status !== 'pass') {
+      tips.push('Use a clear H1 → H2 → H3 hierarchy. ChatGPT uses headings to identify topic authority.');
+    }
+    if (tips.length === 0) {
+      tips.push('Your site is well-optimized for ChatGPT. Consider adding "Best X" list content and regular update dates — ChatGPT cites these formats 43% of the time.');
+    }
+  }
+
+  if (modelKey === 'claude') {
+    // Claude cares about original analysis, hates marketing fluff
+    const contentCheck = findCheck(contentStructure, 'Content length');
+    if (contentCheck && contentCheck.status !== 'pass') {
+      tips.push('Claude values thorough, original analysis over summaries. Add substantive content with unique insights, data, or frameworks.');
+    }
+    const structuredCheck = findCheck(contentStructure, 'Structured content');
+    if (structuredCheck && structuredCheck.status !== 'pass') {
+      tips.push('Claude favors well-structured, skimmable content. Add lists, tables, and clear section breaks.');
+    }
+    const semanticCheck = findCheck(aiAccessibility, 'Semantic HTML');
+    if (semanticCheck && semanticCheck.status !== 'pass') {
+      tips.push('Use semantic HTML elements (<article>, <main>, <section>). Claude uses these to parse page structure.');
+    }
+    if (tips.length === 0) {
+      tips.push('Your site structure is strong for Claude. Focus on adding original analysis and avoiding hyperbolic marketing copy — Claude actively penalizes promotional language.');
+    }
+  }
+
+  if (modelKey === 'perplexity') {
+    // Perplexity: structured data is critical, tables are gold
+    const jsonLdCheck = findCheck(schemaMarkup, 'JSON-LD present');
+    if (jsonLdCheck && jsonLdCheck.status !== 'pass') {
+      tips.push('Perplexity relies heavily on structured data. Add JSON-LD schema — especially FAQPage and HowTo types, which Perplexity actively searches for.');
+    }
+    const structuredCheck = findCheck(contentStructure, 'Structured content');
+    if (structuredCheck && structuredCheck.status !== 'pass') {
+      tips.push('Add comparison tables to your content. Perplexity actively extracts structured tables and virtually guarantees a citation when they\'re present.');
+    }
+    const sitemapCheck = findCheck(aiAccessibility, 'Sitemap');
+    if (sitemapCheck && sitemapCheck.status !== 'pass') {
+      tips.push('Create a sitemap.xml. Perplexity maintains its own index and uses sitemaps for discovery.');
+    }
+    if (tips.length === 0) {
+      tips.push('Strong foundation for Perplexity. Keep content fresh and regularly updated — Perplexity weights recency more heavily than any other AI model.');
+    }
+  }
+
+  if (modelKey === 'gemini') {
+    // Gemini: traditional SEO, domain authority, Google index
+    const metaDescCheck = findCheck(metaTags, 'Meta description');
+    if (metaDescCheck && metaDescCheck.status !== 'pass') {
+      tips.push('Gemini leverages Google\'s index where meta descriptions are critical. Optimize your meta description (120-160 chars) for both search and AI visibility.');
+    }
+    const ogCheck = findCheck(metaTags, 'Open Graph tags');
+    if (ogCheck && ogCheck.status !== 'pass') {
+      tips.push('Complete your Open Graph tags. Gemini uses Google\'s Knowledge Graph, and OG tags feed into entity recognition.');
+    }
+    const botCheck = findCheck(aiAccessibility, 'AI bot access');
+    if (botCheck) {
+      const detail = botCheck.detail || '';
+      if (detail.includes('Google-Extended') || detail.includes('Googlebot')) {
+        // These are blocked
+        tips.push('CRITICAL: Do not block Google-Extended in robots.txt. Unlike other models, blocking Gemini\'s crawler also blocks its citation feature.');
+      }
+    }
+    if (tips.length === 0) {
+      tips.push('Your site is well-positioned for Gemini. Focus on building backlinks and domain authority — Gemini is the most selective model (only 2.47 citations per response) and favors established domains.');
+    }
+  }
+
+  return tips.slice(0, 3);
+}
+
+// ---------------------------------------------------------------------------
 // Lead notification email via SES
 // ---------------------------------------------------------------------------
-async function sendLeadNotification(url, email, overallScore, grade) {
+async function sendLeadNotification(url, email, overallScore, grade, modelScores) {
   try {
     const params = {
       Source: "Hansen Web Services <noreply@hansenwebservices.com>",
       Destination: { ToAddresses: ["marcush1802@gmail.com"] },
       Message: {
         Subject: {
-          Data: `GEO Audit Lead: ${email} (Score: ${overallScore}/100 - ${grade})`,
+          Data: `GEO Audit Lead: ${email} (Overall: ${overallScore}/100 | ChatGPT: ${modelScores.chatgpt.score} | Claude: ${modelScores.claude.score} | Perplexity: ${modelScores.perplexity.score} | Gemini: ${modelScores.gemini.score})`,
           Charset: "UTF-8",
         },
         Body: {
@@ -608,6 +769,7 @@ export const handler = async (event) => {
 
     const overallScore = schemaMarkup.score + metaTags.score + contentStructure.score + aiAccessibility.score;
     const grade = getGrade(overallScore);
+    const modelScores = calculateModelScores({ schemaMarkup, metaTags, contentStructure, aiAccessibility });
 
     // Collect top recommendations (from failed/partial checks)
     const topRecommendations = [];
@@ -622,7 +784,7 @@ export const handler = async (event) => {
 
     // Send lead notification if email provided
     if (email) {
-      await sendLeadNotification(pageUrl, email, overallScore, grade);
+      await sendLeadNotification(pageUrl, email, overallScore, grade, modelScores);
     }
 
     const response = {
@@ -631,6 +793,7 @@ export const handler = async (event) => {
       timestamp: new Date().toISOString(),
       overallScore,
       grade,
+      modelScores,
       categories: {
         schemaMarkup,
         metaTags,

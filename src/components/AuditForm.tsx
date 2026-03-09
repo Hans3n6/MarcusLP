@@ -33,6 +33,7 @@ const loadingSteps = [
   'Fetching your website...',
   'Analyzing schema markup...',
   'Checking AI accessibility...',
+  'Scoring for ChatGPT, Claude, Perplexity & Gemini...',
   'Generating your report...',
 ];
 
