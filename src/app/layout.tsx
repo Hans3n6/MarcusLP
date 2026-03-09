@@ -23,11 +23,20 @@ export const metadata: Metadata = {
     description: "Get found by AI models like ChatGPT, Claude, and Perplexity. Expert GEO consulting for the AI search era.",
     type: "website",
     url: "https://hansenwebservices.com",
+    images: [
+      {
+        url: "/logo-concept-1-monogram-512.png",
+        width: 512,
+        height: 512,
+        alt: "Hansen Web Services",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Hansen Web Services | GEO Agency",
     description: "Get found by AI models. Expert Generative Engine Optimization.",
+    images: ["/logo-concept-1-monogram-512.png"],
   },
 };
 
