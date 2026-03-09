@@ -14,6 +14,10 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
+# Social Media Scrapers - ALLOWED
+User-agent: Linkedinbot
+Allow: /
+
 # Block all other bots
 User-agent: *
 Disallow: /
