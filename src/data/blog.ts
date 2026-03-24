@@ -12,6 +12,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '8',
+    slug: 'paid-ads-vs-geo',
+    title: 'Paid Advertising vs. Generative Engine Optimization: A Comparative Analysis of Modern Visibility Strategies',
+    excerpt: 'An evidence-based examination of how paid digital advertising and Generative Engine Optimization compare across cost structures, trust formation, longevity, and measurable business outcomes.',
+    date: '2026-03-24',
+    readingTime: 14,
+    category: 'Research & Analysis',
+    tags: ['GEO', 'Paid Advertising', 'PPC', 'Digital Marketing', 'ROI Analysis', 'AI Search'],
+    content: ''
+  },
+  {
     id: '1',
     slug: 'what-is-geo',
     title: 'What is Generative Engine Optimization (GEO)?',
