@@ -1,0 +1,10 @@
+{
+  "name": "company-page-handler",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.74.0",
+    "@aws-sdk/client-dynamodb": "^3.1085.0"
+  }
+}

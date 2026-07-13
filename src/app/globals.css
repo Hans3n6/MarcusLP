@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0f172a;
-  --foreground: #f8fafc;
+  --background: #faf6f0;
+  --foreground: #2d2a26;
 }
 
 @theme inline {
@@ -10,7 +10,20 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-display), Georgia, "Times New Roman", serif;
   --spacing-header-gap: 20rem;
+
+  /* Warm & personal palette */
+  --color-cream: #faf6f0;       /* main background */
+  --color-cream-deep: #f1eae0;  /* alternate section background */
+  --color-ink: #2d2a26;         /* headings + body */
+  --color-ink-soft: #5c554b;    /* secondary text */
+  --color-ink-faint: #8a8175;   /* muted text */
+  --color-line: #e7dfd2;        /* borders */
+  --color-clay: #c4643b;        /* accent */
+  --color-clay-deep: #a85430;   /* accent hover */
+  --color-clay-soft: #f3e0d3;   /* accent chip background */
+  --color-night: #2b2622;       /* footer background */
 }
 
 * {
@@ -36,16 +49,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e293b;
+  background: #f1eae0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #6366f1;
+  background: #d9c9b8;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #818cf8;
+  background: #c4643b;
 }
 
 /* Blob animations */
@@ -74,12 +87,4 @@ body {
 
 .animation-delay-4000 {
   animation-delay: 4s;
-}
-
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(to right, #06b6d4, #8b5cf6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }

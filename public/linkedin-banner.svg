@@ -1,0 +1,129 @@
+<svg width="1584" height="396" viewBox="0 0 1584 396" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Brand gradient: cyan to purple -->
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow radial for left accent -->
+    <radialGradient id="glowLeft" cx="20%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:0.12" />
+      <stop offset="100%" style="stop-color:#22d3ee;stop-opacity:0" />
+    </radialGradient>
+
+    <!-- Glow radial for right accent -->
+    <radialGradient id="glowRight" cx="80%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:0.12" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:0" />
+    </radialGradient>
+
+    <!-- Logo gradient (reuse brand) -->
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+
+    <clipPath id="roundedRect">
+      <rect width="1584" height="396" rx="0" ry="0"/>
+    </clipPath>
+  </defs>
+
+  <!-- Base background -->
+  <rect width="1584" height="396" fill="url(#bgGrad)" />
+
+  <!-- Ambient glow overlays -->
+  <rect width="1584" height="396" fill="url(#glowLeft)" />
+  <rect width="1584" height="396" fill="url(#glowRight)" />
+
+  <!-- Subtle grid lines (horizontal) -->
+  <line x1="0" y1="99" x2="1584" y2="99" stroke="#334155" stroke-width="0.5" stroke-opacity="0.4"/>
+  <line x1="0" y1="198" x2="1584" y2="198" stroke="#334155" stroke-width="0.5" stroke-opacity="0.4"/>
+  <line x1="0" y1="297" x2="1584" y2="297" stroke="#334155" stroke-width="0.5" stroke-opacity="0.4"/>
+  <!-- Subtle grid lines (vertical) -->
+  <line x1="264" y1="0" x2="264" y2="396" stroke="#334155" stroke-width="0.5" stroke-opacity="0.3"/>
+  <line x1="528" y1="0" x2="528" y2="396" stroke="#334155" stroke-width="0.5" stroke-opacity="0.3"/>
+  <line x1="792" y1="0" x2="792" y2="396" stroke="#334155" stroke-width="0.5" stroke-opacity="0.3"/>
+  <line x1="1056" y1="0" x2="1056" y2="396" stroke="#334155" stroke-width="0.5" stroke-opacity="0.3"/>
+  <line x1="1320" y1="0" x2="1320" y2="396" stroke="#334155" stroke-width="0.5" stroke-opacity="0.3"/>
+
+  <!-- Decorative circles — top left -->
+  <circle cx="80" cy="80" r="120" fill="none" stroke="#22d3ee" stroke-width="0.8" stroke-opacity="0.15"/>
+  <circle cx="80" cy="80" r="80" fill="none" stroke="#22d3ee" stroke-width="0.8" stroke-opacity="0.1"/>
+  <circle cx="80" cy="80" r="40" fill="none" stroke="#22d3ee" stroke-width="0.8" stroke-opacity="0.12"/>
+
+  <!-- Decorative circles — bottom right -->
+  <circle cx="1500" cy="316" r="140" fill="none" stroke="#a855f7" stroke-width="0.8" stroke-opacity="0.15"/>
+  <circle cx="1500" cy="316" r="90" fill="none" stroke="#a855f7" stroke-width="0.8" stroke-opacity="0.1"/>
+  <circle cx="1500" cy="316" r="45" fill="none" stroke="#a855f7" stroke-width="0.8" stroke-opacity="0.12"/>
+
+  <!-- Gradient accent bar at top -->
+  <rect x="0" y="0" width="1584" height="3" fill="url(#brandGrad)" />
+
+  <!-- Gradient accent bar at bottom -->
+  <rect x="0" y="393" width="1584" height="3" fill="url(#brandGrad)" />
+
+  <!-- ======================== -->
+  <!-- LEFT SIDE: Logo + Name   -->
+  <!-- ======================== -->
+
+  <!-- Logo circle background -->
+  <circle cx="180" cy="198" r="68" fill="#0f172a" stroke="url(#logoGrad)" stroke-width="1.5" stroke-opacity="0.5"/>
+  <circle cx="180" cy="198" r="64" fill="url(#logoGrad)" fill-opacity="0.06"/>
+
+  <!-- HWS monogram -->
+  <text x="180" y="211" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" fill="url(#logoGrad)" text-anchor="middle">HWS</text>
+
+  <!-- Hansen Web Services wordmark -->
+  <text x="290" y="183" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" fill="#f8fafc" text-anchor="start" letter-spacing="-0.5">Hansen Web Services</text>
+
+  <!-- GEO subtitle pill -->
+  <rect x="290" y="200" width="305" height="32" rx="16" fill="url(#brandGrad)" fill-opacity="0.15" stroke="url(#brandGrad)" stroke-width="1" stroke-opacity="0.4"/>
+  <text x="443" y="221" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600" fill="url(#brandGrad)" text-anchor="middle" letter-spacing="2">GENERATIVE ENGINE OPTIMIZATION</text>
+
+  <!-- ======================== -->
+  <!-- DIVIDER LINE             -->
+  <!-- ======================== -->
+  <line x1="660" y1="100" x2="660" y2="296" stroke="url(#brandGrad)" stroke-width="1" stroke-opacity="0.3"/>
+
+  <!-- ======================== -->
+  <!-- CENTER: Value props      -->
+  <!-- ======================== -->
+
+  <!-- Prop 1 -->
+  <circle cx="714" cy="148" r="5" fill="#22d3ee"/>
+  <text x="730" y="153" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" fill="#e2e8f0" text-anchor="start">AI-Powered Brand Visibility</text>
+
+  <!-- Prop 2 -->
+  <circle cx="714" cy="198" r="5" fill="url(#brandGrad)"/>
+  <text x="730" y="203" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" fill="#e2e8f0" text-anchor="start">Luminary Share-of-Voice Tracking</text>
+
+  <!-- Prop 3 -->
+  <circle cx="714" cy="248" r="5" fill="#a855f7"/>
+  <text x="730" y="253" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="600" fill="#e2e8f0" text-anchor="start">ChatGPT · Claude · Perplexity</text>
+
+  <!-- ======================== -->
+  <!-- DIVIDER LINE             -->
+  <!-- ======================== -->
+  <line x1="1010" y1="100" x2="1010" y2="296" stroke="url(#brandGrad)" stroke-width="1" stroke-opacity="0.3"/>
+
+  <!-- ======================== -->
+  <!-- RIGHT: CTA               -->
+  <!-- ======================== -->
+
+  <!-- Tagline -->
+  <text x="1060" y="168" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#94a3b8" text-anchor="start">Get found by AI before</text>
+  <text x="1060" y="193" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#94a3b8" text-anchor="start">your competitors do.</text>
+
+  <!-- URL pill -->
+  <rect x="1060" y="218" width="310" height="44" rx="22" fill="url(#brandGrad)" fill-opacity="0.1" stroke="url(#brandGrad)" stroke-width="1.5" stroke-opacity="0.6"/>
+  <text x="1215" y="245" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="url(#brandGrad)" text-anchor="middle" letter-spacing="0.5">hansenwebservices.com</text>
+
+</svg>

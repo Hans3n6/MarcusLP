@@ -5,73 +5,71 @@ export interface Skill {
 
 export const skills: Skill[] = [
   {
-    category: 'AI Platforms',
+    category: 'AI & LLM Engineering',
     items: [
-      'ChatGPT Optimization',
-      'Claude Integration',
-      'Perplexity Search',
-      'Google AI Overviews',
-      'Emerging AI Models',
-      'Cross-platform Strategy'
+      'Claude API (Anthropic)',
+      'AWS Bedrock',
+      'Multi-Agent Architectures',
+      'RAG & Vector Search',
+      'Prompt Engineering',
+      'MCP Servers'
     ]
   },
   {
-    category: 'Content Strategy',
+    category: 'Languages & Frameworks',
     items: [
-      'AI-Preferred Content Structure',
-      'Query Targeting for AI',
-      'Citation-Worthy Content',
-      'Topic Clustering',
-      'Content Audit & Optimization',
-      'Multi-format Optimization'
+      'Python',
+      'TypeScript',
+      'JavaScript',
+      'React',
+      'Next.js',
+      'HTML/CSS'
     ]
   },
   {
-    category: 'E-E-A-T Building',
+    category: 'Backend & Data',
     items: [
-      'Experience Signals',
-      'Expertise Development',
-      'Authoritativeness Metrics',
-      'Trustworthiness Signals',
-      'Credibility Building',
-      'Author Authority'
+      'REST API Design',
+      'PostgreSQL',
+      'Data Pipelines',
+      'OAuth 2.0 / 2.1',
+      'Webhooks',
+      'pgvector'
     ]
   },
   {
-    category: 'Technical Implementation',
+    category: 'Cloud & DevOps',
     items: [
-      'Schema Markup (JSON-LD)',
-      'Structured Data',
-      'Meta Tags Optimization',
-      'Website Architecture',
-      'Performance Optimization',
-      'Mobile Optimization'
-    ]
-  },
-  {
-    category: 'Analytics & Monitoring',
-    items: [
-      'AI Model Tracking',
-      'Search Performance',
-      'Citation Monitoring',
-      'Visibility Metrics',
-      'Competitive Analysis',
-      'GEO Reporting'
+      'AWS Lambda',
+      'AWS RDS',
+      'Terraform',
+      'Docker',
+      'CI/CD',
+      'Git & GitHub'
     ]
   }
 ];
 
-export const about = {
-  hometown: 'Waseca, Minnesota',
-  background: 'Former collegiate athlete (walk-on → All-American) demonstrating work ethic and determination',
-  perspective: 'Unique ability to solve complex technical challenges with strategic thinking',
-  transition: 'Applied athletic discipline to mastering AI optimization and digital strategy',
-  current: 'GEO specialist helping businesses rank in AI search results and get cited by generative models',
-  availability: 'Available for GEO consulting and optimization projects',
-  services: [
-    'Generative Engine Optimization (GEO)',
-    'AI Content Strategy',
-    'E-E-A-T Authority Building',
-    'Multi-Model Optimization'
+export const certifications = [
+  {
+    name: 'AWS Certified AI Practitioner',
+    issuer: 'Amazon Web Services',
+    year: '2026'
+  },
+  {
+    name: 'Claude Code in Action',
+    issuer: 'Anthropic',
+    year: '2026'
+  }
+];
+
+export const education = {
+  degree: 'Bachelor of Science, Exercise Science',
+  school: 'Bemidji State University',
+  year: '2024',
+  honors: [
+    'NCAA Division II Football',
+    'NSIC Defensive Player of the Year',
+    'AP All-American Selection'
   ]
 };

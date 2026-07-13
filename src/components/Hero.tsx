@@ -1,12 +1,35 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
-import Link from 'next/link';
+import { ChevronDown, Github, FileDown, Linkedin } from 'lucide-react';
 
-export default function Hero() {
-  const scrollToServices = () => {
-    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+export interface HeroLink {
+  href: string;
+  label: string;
+  icon: 'github' | 'linkedin';
+}
+
+interface HeroProps {
+  subtitle?: string;
+  pitch?: string;
+  resumeHref?: string;
+  links?: HeroLink[];
+}
+
+const defaultLinks: HeroLink[] = [
+  { href: 'https://github.com/Hans3n6', label: 'Hans3n6', icon: 'github' },
+  { href: 'https://github.com/marcus740', label: 'marcus740', icon: 'github' },
+  { href: 'https://www.linkedin.com/in/marcus-hansen-39756326b/', label: 'LinkedIn', icon: 'linkedin' },
+];
+
+export default function Hero({
+  subtitle = 'AI Engineer & Full-Stack Developer',
+  pitch = 'I build production AI systems — multi-agent LLM workflows, RAG pipelines, and cloud infrastructure on AWS. Self-taught, AWS Certified AI Practitioner, and currently Co-Founder & Lead AI Engineer at Admin Ambassadors. Open to full-time engineering roles.',
+  resumeHref = '/Marcus_Hansen_Resume.pdf',
+  links = defaultLinks,
+}: HeroProps) {
+  const scrollToExperience = () => {
+    document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const scrollToContact = () => {
@@ -14,21 +37,22 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
-      {/* Animated background elements */}
+    <section className="relative min-h-screen w-full flex items-center justify-center bg-cream overflow-hidden">
+      {/* Soft warm background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
-
-        {/* Hero Image - Right Side */}
+        {/* Hero Image - Right Side (under the blobs so the glow blends across it) */}
         <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden md:block">
           <img
             src="/marcus-football-nobg.png"
             alt="Marcus Hansen in football uniform"
-            className="h-full w-full object-contain object-center opacity-25"
+            className="h-full w-full object-contain object-center opacity-50"
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/60 to-transparent"></div>
         </div>
+
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-clay-soft rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob"></div>
+        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-[#EFE3CE] rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-[#F0DCD0] rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-4000"></div>
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 text-center">
@@ -37,48 +61,62 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">
-            Hansen Web Services
+          <h1 className="font-serif text-5xl md:text-7xl font-semibold mb-6 text-ink">
+            Marcus Hansen
           </h1>
 
-          <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-cyan-300">
-            Generative Engine Optimization (GEO)
+          <h2 className="text-2xl md:text-3xl font-medium mb-8 text-clay">
+            {subtitle}
           </h2>
 
-          <p className="text-lg md:text-xl text-gray-400 mb-16 max-w-3xl mx-auto">
-            Get found by AI models like ChatGPT, Claude, Gemini, and Perplexity. AI search is reshaping how people find information. We help businesses rank in generative engine results and get cited by AI models worldwide.
+          <p className="text-lg md:text-xl text-ink-soft mb-16 max-w-3xl mx-auto">
+            {pitch}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/pricing">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-lg font-semibold hover:from-cyan-400 hover:to-purple-400 transition-all shadow-lg hover:shadow-cyan-500/50"
-              >
-                View Pricing
-              </motion.button>
-            </Link>
+            <motion.button
+              onClick={scrollToExperience}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="w-full sm:w-auto px-8 py-4 bg-clay text-white rounded-full font-semibold hover:bg-clay-deep transition-all shadow-sm"
+            >
+              See My Experience
+            </motion.button>
 
-            <Link href="/blog">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto px-8 py-4 bg-slate-800 text-white rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700 hover:border-slate-600"
-              >
-                Read Our Blog
-              </motion.button>
-            </Link>
+            <motion.a
+              href={resumeHref}
+              download
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="w-full sm:w-auto px-8 py-4 bg-white text-ink rounded-full font-semibold border border-line hover:border-clay/50 transition-all inline-flex items-center justify-center gap-2"
+            >
+              <FileDown className="w-5 h-5" />
+              Download Resume
+            </motion.a>
 
-            <Link href="/audit">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto px-8 py-4 bg-slate-800 text-white rounded-lg font-semibold hover:bg-slate-700 transition-all border border-slate-700 hover:border-slate-600"
+            <motion.button
+              onClick={scrollToContact}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="w-full sm:w-auto px-8 py-4 bg-white text-ink rounded-full font-semibold border border-line hover:border-clay/50 transition-all"
+            >
+              Get In Touch
+            </motion.button>
+          </div>
+
+          <div className="flex gap-6 justify-center mt-10">
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-ink-faint hover:text-clay transition-colors"
               >
-                Free GEO Audit
-              </motion.button>
-            </Link>
+                {link.icon === 'github' ? <Github className="w-5 h-5" /> : <Linkedin className="w-5 h-5" />}
+                <span>{link.label}</span>
+              </a>
+            ))}
           </div>
         </motion.div>
 
@@ -93,9 +131,9 @@ export default function Hero() {
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 1.5 }}
             className="cursor-pointer"
-            onClick={scrollToServices}
+            onClick={scrollToExperience}
           >
-            <ChevronDown className="w-8 h-8 text-gray-400" />
+            <ChevronDown className="w-8 h-8 text-ink-faint" />
           </motion.div>
         </motion.div>
       </div>
