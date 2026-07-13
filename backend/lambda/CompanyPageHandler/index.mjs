@@ -10,7 +10,7 @@ const TABLE = process.env.TABLE_NAME || "hws-company-pages";
 
 const MARCUS_FACTS = `Identity: Marcus Hansen, Waseca, Minnesota. Self-taught AI engineer and full-stack developer. Email Marcush1802hansen@gmail.com, GitHub github.com/Hans3n6 and github.com/marcus740, LinkedIn linkedin.com/in/marcus-hansen-39756326b.
 
-Current: Co-Founder & Lead AI Engineer at Admin Ambassadors (Jan 2026-present), an AI consulting firm. Runs client discovery, finds automation opportunities, ships AI solutions. Flagship: paid enterprise engagement for MBM — daily clone of a production database into AWS RDS with a governed read-only Bedrock + MCP AI query layer so nontechnical staff query live data in plain English (Python, AWS Lambda/RDS/Bedrock, Terraform, OAuth 2.1, pgvector). Also for MBM: a QR-code shop-floor time tracker (Next.js, TypeScript, Supabase, Vercel) — workers scan a task's QR sticker to clock in/out; in daily use in their lab.
+Current: Co-Founder & Lead AI Engineer at Admin Ambassadors (Jan 2026-present), an AI consulting firm. Runs client discovery, finds automation opportunities, ships AI solutions. Flagship: a paid enterprise engagement for a client (client name is confidential, never name or invent one): a daily clone of a production database into AWS RDS with a governed read only Bedrock + MCP AI query layer so nontechnical staff query live data in plain English (Python, AWS Lambda/RDS/Bedrock, Terraform, OAuth 2.1, pgvector). For the same client: a QR code shop floor time tracker (Next.js, TypeScript, Supabase, Vercel) that workers scan to clock in and out, in daily use in their lab.
 
 Prior: Full Stack Developer at BS&Co (Jan-May 2026) — Auto Brief, a three-agent AI system (TypeScript, Claude API) in daily production; Campaign Calendar (React/Python/AWS, three parallel APIs + Postgres, daily production); RAG pipelines with embeddings and vector search; REST APIs; Shopify.
 
@@ -102,7 +102,9 @@ RULES:
 3. Never fabricate anything about Marcus. Map only his real experience to their world.
 4. Pick the resume lane: "healthcare" for clinical/patient-facing/health-system ops roles; "cs" for customer success, implementation, onboarding, account or client-facing roles (including health-tech vendors); "ai" for engineering/technical roles and everything else.
 5. Exactly 4 fitPoints. Tone: confident, specific, human. Mention the company by name in the intro.
-6. BREVITY IS EVERYTHING. This page is skimmed in 15 seconds by a busy recruiter. One sentence per field. No comma-chained resume dumps — each fit point makes ONE claim with ONE proof. Cut every word that doesn't earn its place.`,
+6. BREVITY IS EVERYTHING. This page is skimmed in 15 seconds by a busy recruiter. One sentence per field. No comma chained resume dumps. Each fit point makes ONE claim with ONE proof. Cut every word that doesn't earn its place.
+7. NEVER use hyphens or dashes of any kind (-, –, —) anywhere in your output. Write compound words as separate words: multi agent, full stack, read only, self taught, high volume. Use commas, colons, or periods where you would reach for a dash.
+8. Never name Marcus's consulting clients. Refer to them only as "an enterprise client" or "a client".`,
       messages: [{ role: "user", content: JSON.stringify({ company, role: role || null }) }],
       output_config: { format: { type: "json_schema", schema: PAGE_SCHEMA } },
     });

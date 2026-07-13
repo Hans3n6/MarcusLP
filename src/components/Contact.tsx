@@ -138,7 +138,7 @@ export default function Contact({
                   className={inputClasses}
                 >
                   <option value="">Select an option</option>
-                  <option value="full-time-role">A full-time role</option>
+                  <option value="full-time-role">A full time role</option>
                   <option value="contract-freelance">Contract / freelance work</option>
                   <option value="ai-consulting">AI consulting</option>
                   <option value="other">Something else</option>
@@ -208,7 +208,7 @@ export default function Contact({
                 </a>
                 <a href="tel:5072017442" className="inline-flex items-center gap-2 hover:text-clay transition-colors">
                   <Phone className="w-5 h-5 text-clay" />
-                  507-201-7442
+                  507.201.7442
                 </a>
                 {showGithub && (
                   <a href="https://github.com/Hans3n6" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-clay transition-colors">

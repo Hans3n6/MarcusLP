@@ -8,9 +8,9 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Marcus Hansen | AI Engineer & Full-Stack Developer',
+  title: 'Marcus Hansen | AI Engineer & Full Stack Developer',
   description:
-    'Self-taught AI engineer building production LLM systems — multi-agent architectures, RAG pipelines, and AWS cloud infrastructure. AWS Certified AI Practitioner. Open to full-time engineering roles.',
+    'Self taught AI engineer building production LLM systems: multi agent architectures, RAG pipelines, and AWS cloud infrastructure. AWS Certified AI Practitioner. Open to full time engineering roles.',
   robots: { index: false, follow: false },
 };
 

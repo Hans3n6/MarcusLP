@@ -42,12 +42,12 @@ export default function GeneralHero() {
           </h1>
 
           <p className="font-serif text-2xl md:text-3xl text-clay mb-10 max-w-3xl mx-auto leading-snug">
-            I figure things out — on the field, in the ER, in code.
+            I figure things out: on the field, in the ER, in code.
           </p>
 
           <p className="text-lg md:text-xl text-ink-soft mb-16 max-w-2xl mx-auto">
-            Former Division II All-American. Two years on the floor of a busy hospital ER.
-            Now I help businesses solve real problems with technology. Different worlds —
+            Former Division II All American. Two years on the floor of a busy hospital ER.
+            Now I help businesses solve real problems with technology. Different worlds,
             same job: see what needs doing, figure it out, deliver.
           </p>
 

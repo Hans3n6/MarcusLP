@@ -2,18 +2,18 @@ import { Role } from '@/data/experience';
 import { Skill } from '@/data/about';
 
 export const hero = {
-  subtitle: 'Customer Success · Implementation · Health-Tech',
+  subtitle: 'Customer Success · Implementation · Health Tech',
   pitch:
-    'Client-facing consultant with healthcare roots and real technical fluency. I onboard clients, configure solutions to their workflows, and train them to succeed — and I understand healthcare customers because I was one. Open to customer success, implementation, onboarding, and client-facing roles.',
+    'Client facing consultant with healthcare roots and real technical fluency. I onboard clients, configure solutions to their workflows, and train them to succeed. And I understand healthcare customers because I was one. Open to customer success, implementation, onboarding, and client facing roles.',
 };
 
 export const roles: Role[] = [
   {
-    title: 'Co-Founder',
+    title: 'Cofounder',
     org: 'Admin Ambassadors',
-    dates: '2026 – Present',
+    dates: '2026 to Present',
     summary:
-      'Co-founded an AI consulting firm serving business clients with a human-first approach. Onboard clients, learn their workflows, and configure tailored solutions — including an AI-powered system that lets a client query their business data in plain language — then support them day to day through adoption.',
+      'Cofounded an AI consulting firm serving business clients with a human first approach. Onboard clients, learn their workflows, and configure tailored solutions, including an AI powered system that lets a client query their business data in plain language, then support them day to day through adoption.',
     highlights: [
       'Serve as the primary point of contact and coordinate across stakeholders',
       'Turn single projects into ongoing partnerships',
@@ -23,9 +23,9 @@ export const roles: Role[] = [
   {
     title: 'Patient Access & Clinical Support',
     org: 'Sanford Bemidji Medical Center',
-    dates: '2022 – 2024',
+    dates: '2022 to 2024',
     summary:
-      'Worked three roles across a busy medical center, including as an ER ward secretary handling patient registration, scheduling, insurance verification, and records in Epic. Coordinated communication between patients, providers, and departments, and supported patients directly as a triage technician — taking vitals, rooming patients, and performing EKGs.',
+      'Worked three roles across a busy medical center, including as an ER ward secretary handling patient registration, scheduling, insurance verification, and records in Epic. Coordinated communication between patients, providers, and departments, and supported patients directly as a triage technician, taking vitals, rooming patients, and performing EKGs.',
     highlights: [
       'Firsthand understanding of both the operational and clinical sides of a medical practice'
     ]
@@ -61,8 +61,8 @@ export const skills: Skill[] = [
       'Platform Configuration',
       'Workflow Consulting',
       'User Training',
-      'Go-Live Coordination',
-      'Cross-Functional Teams',
+      'Go Live Coordination',
+      'Cross Functional Teams',
       'Documentation'
     ]
   },
@@ -92,12 +92,12 @@ export const education = {
   honors: [
     'NCAA Division II Football',
     'NSIC Defensive Player of the Year',
-    'AP All-American Selection'
+    'AP All American Selection'
   ]
 };
 
 export const story = {
   finalTitle: 'From Field to Client Work',
   finalText:
-    'The same discipline that turned a walk-on into an All-American is what I bring to clients: learn fast, prepare relentlessly, and show up for the people counting on you. I’ve sat on the customer’s side of healthcare software, and now I spend my days onboarding clients, configuring tools to fit their world, and sticking with them until it works.'
+    'The same discipline that turned a walk on into an All American is what I bring to clients: learn fast, prepare relentlessly, and show up for the people counting on you. I\'ve sat on the customer\'s side of healthcare software, and now I spend my days onboarding clients, configuring tools to fit their world, and sticking with them until it works.'
 };

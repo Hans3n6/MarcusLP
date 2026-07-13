@@ -19,7 +19,7 @@ export default function Projects() {
             Featured Projects
           </h2>
           <p className="text-lg text-ink-soft max-w-3xl mx-auto">
-            Production systems built for real clients and real users — not tutorials
+            Production systems built for real clients and real users, not tutorials
           </p>
         </motion.div>
 

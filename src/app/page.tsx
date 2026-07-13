@@ -10,15 +10,15 @@ export default function Home() {
       <GeneralHero />
       <Story
         finalTitle="Figuring Things Out"
-        finalText="Since football, I've worked the floor of a busy ER, helped people reach their goals, and taught myself to build software — today I co-lead a small consulting firm helping businesses solve real problems with technology. The thread through all of it: hand me something hard and unfamiliar, and I'll figure it out. The discipline came from athletics. It shows up in everything I do."
+        finalText="Since football, I've worked the floor of a busy ER, helped people reach their goals, and taught myself to build software. Today I help lead a small consulting firm helping businesses solve real problems with technology. The thread through all of it: hand me something hard and unfamiliar, and I'll figure it out. The discipline came from athletics. It shows up in everything I do."
       />
       <HiringRouter />
       <Contact
-        subheading="Want to work together — or just want to say hi? Either way, I'd love to hear from you."
+        subheading="Want to work together, or just want to say hi? Either way, I'd love to hear from you."
         showGithub={false}
       />
       <Footer
-        description="Former All-American, ER-tested, self-taught builder. Waseca, Minnesota."
+        description="Former All American, ER tested, self taught builder. Waseca, Minnesota."
         resumeHref=""
         showGithub={false}
         sections={[

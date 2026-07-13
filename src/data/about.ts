@@ -9,7 +9,7 @@ export const skills: Skill[] = [
     items: [
       'Claude API (Anthropic)',
       'AWS Bedrock',
-      'Multi-Agent Architectures',
+      'Multi Agent Architectures',
       'RAG & Vector Search',
       'Prompt Engineering',
       'MCP Servers'
@@ -70,6 +70,6 @@ export const education = {
   honors: [
     'NCAA Division II Football',
     'NSIC Defensive Player of the Year',
-    'AP All-American Selection'
+    'AP All American Selection'
   ]
 };

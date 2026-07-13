@@ -20,7 +20,7 @@ const defaultSections = [
 ];
 
 export default function Footer({
-  description = 'AI engineer and full-stack developer building production LLM systems on AWS. Open to full-time engineering roles.',
+  description = 'AI engineer and full stack developer building production LLM systems on AWS. Open to full time engineering roles.',
   resumeHref = '/Marcus_Hansen_Resume.pdf',
   showGithub = true,
   sections = defaultSections,
@@ -86,7 +86,7 @@ export default function Footer({
                 className="flex items-center gap-2 text-[#B8AE9F] hover:text-[#E8A87C] transition-colors text-sm group"
               >
                 <Phone className="w-4 h-4 text-[#E8A87C] group-hover:scale-110 transition-transform" />
-                <span>507-201-7442</span>
+                <span>507.201.7442</span>
               </a>
               <a
                 href="mailto:Marcush1802hansen@gmail.com"

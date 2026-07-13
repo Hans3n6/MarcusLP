@@ -23,8 +23,8 @@ const defaultLinks: HeroLink[] = [
 ];
 
 export default function Hero({
-  subtitle = 'AI Engineer & Full-Stack Developer',
-  pitch = 'I build production AI systems — multi-agent LLM workflows, RAG pipelines, and cloud infrastructure on AWS. Self-taught, AWS Certified AI Practitioner, and currently Co-Founder & Lead AI Engineer at Admin Ambassadors. Open to full-time engineering roles.',
+  subtitle = 'AI Engineer & Full Stack Developer',
+  pitch = 'I build production AI systems: multi agent LLM workflows, RAG pipelines, and cloud infrastructure on AWS. Self taught, AWS Certified AI Practitioner, and currently Cofounder & Lead AI Engineer at Admin Ambassadors. Open to full time engineering roles.',
   resumeHref = '/Marcus_Hansen_Resume.pdf',
   links = defaultLinks,
 }: HeroProps) {

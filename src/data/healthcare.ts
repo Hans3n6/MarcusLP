@@ -4,18 +4,18 @@ import { Skill } from '@/data/about';
 export const hero = {
   subtitle: 'Healthcare Operations Professional',
   pitch:
-    'Two years and three roles across Sanford Health’s Bemidji Medical Center — ER Ward Secretary, Triage Technician, and Physical Therapy Aide. Epic experienced, HIPAA disciplined, and calm in high-volume clinical settings. Open to patient access, intake, scheduling, and clinical support roles.',
+    'Two years and three roles across Sanford Health\'s Bemidji Medical Center: ER Ward Secretary, Triage Technician, and Physical Therapy Aide. Epic experienced, HIPAA disciplined, and calm in high volume clinical settings. Open to patient access, intake, scheduling, and clinical support roles.',
 };
 
 export const roles: Role[] = [
   {
     title: 'ER Ward Secretary',
     org: 'Sanford Bemidji Medical Center',
-    dates: '2022 – 2024',
+    dates: '2022 to 2024',
     summary:
       'Registered and admitted patients, obtaining and verifying demographic and insurance information and entering it accurately into the registration system. Processed physician orders, coordinated admissions, transfers, and discharges, and scheduled appointments, referrals, and diagnostic procedures.',
     highlights: [
-      'Answered and routed high volumes of multi-line phone calls',
+      'Answered and routed high volumes of multi line phone calls',
       'Maintained patient charts and records in Epic',
       'Handled confidential information under HIPAA'
     ]
@@ -23,18 +23,18 @@ export const roles: Role[] = [
   {
     title: 'Triage Technician',
     org: 'Sanford Bemidji Medical Center',
-    dates: '2022 – 2024',
+    dates: '2022 to 2024',
     summary:
-      'Took incoming patients’ vital signs, roomed patients, and documented medications and allergies in the electronic medical record. Performed EKGs and assisted providers with in-office testing and clinical procedures.',
+      'Took incoming patients\' vital signs, roomed patients, and documented medications and allergies in the electronic medical record. Performed EKGs and assisted providers with in office testing and clinical procedures.',
     highlights: [
-      'Supported patient flow and clinical staff in a fast-paced environment',
+      'Supported patient flow and clinical staff in a fast paced environment',
       'Kept exam areas clean and stocked'
     ]
   },
   {
     title: 'Physical Therapy Aide',
     org: 'Sanford Bemidji Medical Center',
-    dates: '2022 – 2024',
+    dates: '2022 to 2024',
     summary:
       'Prepared physical therapy patients and set up treatment areas and equipment for sessions. Supported therapists during treatment and maintained accurate patient records and schedules.',
     highlights: []
@@ -48,11 +48,11 @@ export const roles: Role[] = [
     highlights: []
   },
   {
-    title: 'Co-Founder',
+    title: 'Cofounder',
     org: 'Admin Ambassadors',
-    dates: '2026 – Present',
+    dates: '2026 to Present',
     summary:
-      'Co-founded a consulting firm serving business clients. Coordinate requests, resolve issues, maintain accurate data across systems, and communicate with stakeholders.',
+      'Cofounded a consulting firm serving business clients. Coordinate requests, resolve issues, maintain accurate data across systems, and communicate with stakeholders.',
     highlights: []
   }
 ];
@@ -64,7 +64,7 @@ export const skills: Skill[] = [
       'Epic (EHR)',
       'Electronic Health Records',
       'Patient & Insurance Information',
-      'High-Volume Accuracy',
+      'High Volume Accuracy',
       'HIPAA Compliance',
       'Quick to Learn New Systems'
     ]
@@ -96,7 +96,7 @@ export const skills: Skill[] = [
     items: [
       'Microsoft Word, Excel, Outlook',
       'Accurate Data Entry',
-      'Multi-Line Phones',
+      'Multi Line Phones',
       'Working Across Multiple Systems',
       'Professional Phone Presence',
       'Clear Written Communication'
@@ -117,12 +117,12 @@ export const education = {
   honors: [
     'NCAA Division II Football',
     'NSIC Defensive Player of the Year',
-    'AP All-American Selection'
+    'AP All American Selection'
   ]
 };
 
 export const story = {
   finalTitle: 'From the Field to Patient Care',
   finalText:
-    'The discipline that built an All-American career is the same discipline I brought to two years of patient-facing work at Sanford Health — showing up every day, staying calm under pressure, and treating every patient and coworker with respect. I learn new systems fast, I take accuracy seriously, and I bring a teammate’s mentality to every shift.'
+    'The discipline that built an All American career is the same discipline I brought to two years of patient facing work at Sanford Health: showing up every day, staying calm under pressure, and treating every patient and coworker with respect. I learn new systems fast, I take accuracy seriously, and I bring a teammate\'s mentality to every shift.'
 };

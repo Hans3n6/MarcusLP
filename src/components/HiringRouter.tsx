@@ -9,19 +9,19 @@ const LANES = [
     href: '/healthcare',
     icon: Stethoscope,
     title: 'Healthcare Operations',
-    text: 'Patient access, intake, scheduling, clinical support — two years at Sanford Health.',
+    text: 'Patient access, intake, scheduling, and clinical support. Two years at Sanford Health.',
   },
   {
     href: '/customer-success',
     icon: HeartHandshake,
     title: 'Client Success & Implementation',
-    text: 'Onboarding, configuration, and training — with healthcare roots and technical fluency.',
+    text: 'Onboarding, configuration, and training, with healthcare roots and technical fluency.',
   },
   {
     href: '/ai',
     icon: Code2,
     title: 'Software & AI Engineering',
-    text: 'Production systems for real clients — full-stack development and applied AI on AWS.',
+    text: 'Production systems for real clients: full stack development and applied AI on AWS.',
   },
 ];
 

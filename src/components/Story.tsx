@@ -10,7 +10,7 @@ interface StoryProps {
 
 export default function Story({
   finalTitle = 'From Field to Code',
-  finalText = "Applied the same discipline from athletics to teach myself software development — from nothing to shipping production AI systems in months. Today I co-lead an AI consulting firm and build multi-agent LLM systems, data pipelines, and cloud infrastructure for paying clients. I don't wait for things to be perfectly defined: I build, learn from the results, and iterate."
+  finalText = "Applied the same discipline from athletics to teach myself software development, going from nothing to shipping production AI systems in months. Today I help lead an AI consulting firm and build multi agent LLM systems, data pipelines, and cloud infrastructure for paying clients. I don't wait for things to be perfectly defined: I build, learn from the results, and iterate."
 }: StoryProps) {
   return (
     <section id="story" className="w-full pt-24 pb-32 bg-cream flex justify-center">
@@ -46,11 +46,11 @@ export default function Story({
             {/* Walk-on to Star */}
             <div>
               <h3 className="font-serif text-2xl font-semibold text-ink mb-6">
-                Walk-On to All-American
+                Walk On to All American
               </h3>
               <p className="text-lg text-ink-soft leading-relaxed max-w-3xl mx-auto mb-6">
-                Started as a walk-on at Bemidji State University and worked my way to becoming
-                the 2023 NSIC Defensive Player of the Year and a two-time AP All-American.
+                Started as a walk on at Bemidji State University and worked my way to becoming
+                the 2023 NSIC Defensive Player of the Year and a two time AP All American.
                 This journey taught me that dedication and persistence can overcome any obstacle.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
@@ -84,7 +84,7 @@ export default function Story({
                 After being dismissed from a university for my sexual orientation, I found
                 an inclusive home at Minnesota State Mankato, where I could be both an athlete
                 and my authentic self. Overcoming this adversity taught me resilience and
-                perseverance—qualities I bring to every project.
+                perseverance, qualities I bring to every project.
               </p>
               <a
                 href="https://www.startribune.com/how-inclusive-culture-brought-an-all-america-pass-rusher-to-mankato/601552524"

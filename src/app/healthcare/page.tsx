@@ -10,7 +10,7 @@ import { hero, roles, skills, certifications, education, story } from '@/data/he
 export const metadata: Metadata = {
   title: 'Marcus Hansen | Healthcare Operations Professional',
   description:
-    'Healthcare operations professional with two years and three roles at Sanford Health — patient registration, triage, scheduling, and Epic. Open to patient access, intake, and clinical support roles in Minnesota.',
+    'Healthcare operations professional with two years and three roles at Sanford Health: patient registration, triage, scheduling, and Epic. Open to patient access, intake, and clinical support roles in Minnesota.',
   robots: { index: false, follow: false },
 };
 
@@ -30,7 +30,7 @@ export default function HealthcarePage() {
         skills={skills}
         certifications={certifications}
         education={education}
-        subheading="What I bring to a clinic, hospital, or health-plan team"
+        subheading="What I bring to a clinic, hospital, or health plan team"
       />
       <Story finalTitle={story.finalTitle} finalText={story.finalText} />
       <Contact
@@ -38,7 +38,7 @@ export default function HealthcarePage() {
         showGithub={false}
       />
       <Footer
-        description="Healthcare operations professional — two years across three roles at Sanford Health. Epic experienced, HIPAA disciplined, open to full-time healthcare roles."
+        description="Healthcare operations professional with two years across three roles at Sanford Health. Epic experienced, HIPAA disciplined, open to full time healthcare roles."
         resumeHref="/Marcus_Hansen_Healthcare_Resume.pdf"
         showGithub={false}
         sections={[

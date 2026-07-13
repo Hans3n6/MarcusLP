@@ -19,13 +19,13 @@ const lora = Lora({
 
 export const metadata: Metadata = {
   title: "Marcus Hansen",
-  description: "I figure things out — on the field, in the ER, in code. Former All-American, ER-tested, self-taught builder based in Waseca, Minnesota.",
+  description: "I figure things out: on the field, in the ER, in code. Former All American, ER tested, self taught builder based in Waseca, Minnesota.",
   keywords: ["Marcus Hansen", "Waseca", "Minnesota", "problem solver", "healthcare operations", "customer success", "software engineer"],
   authors: [{ name: "Marcus Hansen" }],
   metadataBase: new URL("https://hansenwebservices.com"),
   openGraph: {
     title: "Marcus Hansen",
-    description: "I figure things out — on the field, in the ER, in code.",
+    description: "I figure things out: on the field, in the ER, in code.",
     type: "website",
     url: "https://hansenwebservices.com",
     images: [
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Marcus Hansen",
-    description: "I figure things out — on the field, in the ER, in code.",
+    description: "I figure things out: on the field, in the ER, in code.",
     images: ["/logo-concept-1-monogram-512.png"],
   },
 };

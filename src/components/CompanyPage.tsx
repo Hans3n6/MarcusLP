@@ -78,11 +78,11 @@ export default function CompanyPage() {
     return (
       <Shell>
         <h1 className="font-serif text-4xl md:text-5xl font-semibold mb-6 text-ink">
-          You found the magic-link machine
+          You found the magic link machine
         </h1>
         <p className="text-lg text-ink-soft max-w-2xl mx-auto mb-10">
           When Marcus applies to a company, this page builds itself for their team.
-          If someone gave you a link, use theirs — or see everything on the main site.
+          If someone gave you a link, use theirs, or see everything on the main site.
         </p>
         <HomeButton />
       </Shell>
@@ -97,7 +97,7 @@ export default function CompanyPage() {
           Marcus × {company}
         </h1>
         <p className="text-lg text-ink-soft max-w-2xl mx-auto mb-10">
-          This page is having a moment — but Marcus is very real. His full background,
+          This page is having a moment, but Marcus is very real. His full background,
           projects, and resume are one click away, or email him at{' '}
           <a href="mailto:Marcush1802hansen@gmail.com" className="text-clay hover:text-clay-deep">
             Marcush1802hansen@gmail.com
@@ -138,7 +138,7 @@ export default function CompanyPage() {
       <div className="max-w-5xl mx-auto px-6 py-20">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-center mb-16">
           <p className="text-clay uppercase tracking-widest text-sm mb-4 font-medium">
-            Marcus Hansen × {data.company}{data.role ? ` — ${data.role}` : ''}
+            Marcus Hansen × {data.company}{data.role ? ` · ${data.role}` : ''}
           </p>
           <h1 className="font-serif text-4xl md:text-6xl font-semibold mb-8 text-ink">
             {data.headline}
