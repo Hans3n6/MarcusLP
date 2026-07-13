@@ -8,6 +8,7 @@ interface FooterProps {
   resumeHref?: string;
   showGithub?: boolean;
   sections?: { href: string; label: string }[];
+  recruiterLinks?: { href: string; label: string }[];
 }
 
 const defaultSections = [
@@ -22,7 +23,8 @@ export default function Footer({
   description = 'AI engineer and full-stack developer building production LLM systems on AWS. Open to full-time engineering roles.',
   resumeHref = '/Marcus_Hansen_Resume.pdf',
   showGithub = true,
-  sections = defaultSections
+  sections = defaultSections,
+  recruiterLinks
 }: FooterProps) {
   return (
     <footer className="w-full bg-night border-t border-line/10">
@@ -49,13 +51,30 @@ export default function Footer({
                   </Link>
                 </li>
               ))}
-              <li>
-                <a href={resumeHref} download className="inline-flex items-center gap-1 text-[#B8AE9F] hover:text-[#E8A87C] transition-colors text-sm">
-                  <FileDown className="w-3.5 h-3.5" />
-                  Download Resume
-                </a>
-              </li>
+              {resumeHref && (
+                <li>
+                  <a href={resumeHref} download className="inline-flex items-center gap-1 text-[#B8AE9F] hover:text-[#E8A87C] transition-colors text-sm">
+                    <FileDown className="w-3.5 h-3.5" />
+                    Download Resume
+                  </a>
+                </li>
+              )}
             </ul>
+
+            {recruiterLinks && recruiterLinks.length > 0 && (
+              <>
+                <h4 className="text-[#F5EFE6] font-semibold mb-4 mt-8">For Recruiters</h4>
+                <ul className="space-y-2">
+                  {recruiterLinks.map((link) => (
+                    <li key={link.href}>
+                      <Link href={link.href} className="text-[#B8AE9F] hover:text-[#E8A87C] transition-colors text-sm">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
           </div>
 
           {/* Contact Info */}

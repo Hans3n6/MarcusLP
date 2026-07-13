@@ -29,6 +29,12 @@ const RESUME_BY_LANE: Record<PageData['lane'], string> = {
   cs: '/Marcus_Hansen_CS_Resume.pdf',
 };
 
+const PAGE_BY_LANE: Record<PageData['lane'], string> = {
+  ai: '/ai',
+  healthcare: '/healthcare',
+  cs: '/customer-success',
+};
+
 const MIN_THEATER_MS = 1800;
 
 export default function CompanyPage() {
@@ -185,10 +191,10 @@ export default function CompanyPage() {
               Get in touch
             </a>
             <Link
-              href="/"
+              href={PAGE_BY_LANE[data.lane] || '/'}
               className="px-8 py-4 bg-white text-ink rounded-full font-semibold border border-line hover:border-clay/50 transition-all inline-flex items-center justify-center gap-2"
             >
-              Full site
+              See my full site
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>

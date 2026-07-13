@@ -8,15 +8,17 @@
 
 ## Structure
 
-Three routes, one per job-type lane (mirrors the three resume templates in `/Users/marcushansen/Job Hunt/`):
+`/` is a GENERAL "get to know Marcus" page — deliberately role-neutral (problem-solver framing, story, "Hiring?" router to lanes, contact; no resume download, no GitHub) so a hiring team from ANY lane can land on the bare domain without confusion. Composed of GeneralHero + Story + HiringRouter + Contact + Footer (with `recruiterLinks`).
+
+Job-specific lane pages (mirror the three resume templates in `/Users/marcushansen/Job Hunt/`):
 
 | Route | Lane | Template source | Resume PDF | Notes |
 |---|---|---|---|---|
-| `/` | AI / dev | MASTER_REFERENCE.md | `Marcus_Hansen_Resume.pdf` | Full site with Projects section |
+| `/ai` | AI / dev | MASTER_REFERENCE.md | `Marcus_Hansen_Resume.pdf` | Full site with Projects section; noindex |
 | `/healthcare` | Healthcare ops | HEALTHCARE_RESUME_TEMPLATE.md | `Marcus_Hansen_Healthcare_Resume.pdf` | Leads 3 Sanford roles; NO GitHub links anywhere (kills flight-risk read); ACSM/BLS certs; noindex |
 | `/customer-success` | CS / implementation / health-tech | CS_HEALTHTECH_RESUME_TEMPLATE.md | `Marcus_Hansen_CS_Resume.pdf` | Trifecta positioning: Admin Ambassadors leads, Sanford consolidated; noindex |
 
-Variant pages are NOT linked from the main page — they're direct URLs Marcus puts on applications. Their data lives in `src/data/healthcare.ts` and `src/data/customerSuccess.ts`; section components (Hero/Experience/About/Story/Contact/Footer) take props with AI-lane defaults, so `/` uses them bare.
+Lane pages are reachable from `/` only via the "Hiring?" router and the footer's "For Recruiters" links; applications carry the lane URL directly (AI/dev roles now use `/ai`, not the bare domain). Their data lives in `src/data/healthcare.ts` and `src/data/customerSuccess.ts`; section components (Hero/Experience/About/Story/Contact/Footer) take props with AI-lane defaults, so `/` uses them bare.
 
 **Magic link pages:** `/for?c=<Company>[&r=<Role>]` generates a personalized "Why Marcus fits <Company>" page. Frontend: `src/app/for/page.tsx` + `src/components/CompanyPage.tsx` (loading theater → fit points → lane-matched resume CTA). Backend: `backend/lambda/CompanyPageHandler` — Claude Haiku 4.5 via `ANTHROPIC_API_KEY` env var, structured JSON output, cached in DynamoDB `hws-company-pages` so each company generates once (~$0.005) and repeat visits are instant. Function URL goes in `src/config/companyPage.ts` (empty = offline fallback). Marcus's workflow: when applying, pre-warm with `curl "<url>?c=Company&r=Role"` and put the magic link on the application. See that folder's README for deploy/regenerate commands.
 

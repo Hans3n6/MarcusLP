@@ -18,14 +18,14 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Marcus Hansen | AI Engineer & Full-Stack Developer",
-  description: "Self-taught AI engineer building production LLM systems — multi-agent architectures, RAG pipelines, and AWS cloud infrastructure. AWS Certified AI Practitioner. Open to full-time engineering roles.",
-  keywords: ["Marcus Hansen", "AI Engineer", "Full-Stack Developer", "Claude API", "AWS Bedrock", "LLM", "multi-agent systems", "RAG", "Python", "TypeScript", "React", "Minnesota"],
+  title: "Marcus Hansen",
+  description: "I figure things out — on the field, in the ER, in code. Former All-American, ER-tested, self-taught builder based in Waseca, Minnesota.",
+  keywords: ["Marcus Hansen", "Waseca", "Minnesota", "problem solver", "healthcare operations", "customer success", "software engineer"],
   authors: [{ name: "Marcus Hansen" }],
   metadataBase: new URL("https://hansenwebservices.com"),
   openGraph: {
-    title: "Marcus Hansen | AI Engineer & Full-Stack Developer",
-    description: "Self-taught AI engineer building production LLM systems on AWS. Open to full-time engineering roles.",
+    title: "Marcus Hansen",
+    description: "I figure things out — on the field, in the ER, in code.",
     type: "website",
     url: "https://hansenwebservices.com",
     images: [
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Marcus Hansen | AI Engineer & Full-Stack Developer",
-    description: "Self-taught AI engineer building production LLM systems on AWS. Open to full-time engineering roles.",
+    title: "Marcus Hansen",
+    description: "I figure things out — on the field, in the ER, in code.",
     images: ["/logo-concept-1-monogram-512.png"],
   },
 };
