@@ -21,6 +21,18 @@ export const roles: Role[] = [
     ]
   },
   {
+    title: 'Operations Specialist Associate',
+    org: 'Landmark Transcription',
+    dates: '2022 to 2025',
+    summary:
+      'Managed operations for a fully remote transcription service: ran the workflow queue against critical turnaround deadlines, performed quality assurance on output, handled billing and invoicing, and served as a direct point of contact for clients.',
+    highlights: [
+      'Communicated directly with clients and resolved issues to keep work on schedule',
+      'Owned quality assurance so deliverables met client standards',
+      'Managed billing and invoicing across the client base'
+    ]
+  },
+  {
     title: 'Patient Access & Clinical Support',
     org: 'Sanford Bemidji Medical Center',
     dates: '2022 to 2024',

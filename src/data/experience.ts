@@ -39,5 +39,13 @@ export const roles: Role[] = [
     summary:
       'Managed data and communication systems in a high volume clinical setting, building operational discipline, process awareness, and healthcare workflow understanding.',
     highlights: []
+  },
+  {
+    title: 'Operations Specialist Associate',
+    org: 'Landmark Transcription',
+    dates: '2022 to 2025',
+    summary:
+      'Ran the workflow queue for a fully remote transcription operation, categorizing and assigning files and driving timely resolution against critical turnaround deadlines. Performed quality assurance on output, managed billing and invoicing, and communicated directly with clients.',
+    highlights: []
   }
 ];
