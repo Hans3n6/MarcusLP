@@ -1,5 +1,5 @@
 import Anthropic from "@anthropic-ai/sdk";
-import { DynamoDBClient, GetItemCommand, PutItemCommand } from "@aws-sdk/client-dynamodb";
+import { DynamoDBClient, GetItemCommand, PutItemCommand, UpdateItemCommand } from "@aws-sdk/client-dynamodb";
 
 // API key from the ANTHROPIC_API_KEY environment variable on the Lambda
 const anthropic = new Anthropic();
@@ -7,6 +7,14 @@ const dynamo = new DynamoDBClient({ region: "us-east-1" });
 
 const MODEL = "claude-haiku-4-5";
 const TABLE = process.env.TABLE_NAME || "hws-company-pages";
+const VIEWS_TABLE = process.env.VIEWS_TABLE || "hws-page-views";
+const VIEW_TTL_DAYS = 180;
+
+// A real magic-link click is a BROWSER fetch from the site, so the cross-origin
+// request always carries Origin: https://hansenwebservices.com. The pre-warm
+// `curl "<fn-url>?c=&r="` sends no Origin, so pre-warms self-filter out.
+const SITE_HOST = /(^|\.)hansenwebservices\.com$/i;
+const BOT_UA = /bot|crawler|spider|preview|scanner|monitor|curl|wget|python-requests|headless|slurp|facebookexternalhit|slackbot|whatsapp|embedly/i;
 
 const MARCUS_FACTS = `Identity: Marcus Hansen, Waseca, Minnesota. Self-taught AI engineer and full-stack developer. Email Marcush1802hansen@gmail.com, GitHub github.com/Hans3n6 and github.com/marcus740, LinkedIn linkedin.com/in/marcus-hansen-39756326b.
 
@@ -53,6 +61,59 @@ const PAGE_SCHEMA = {
 
 const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60);
 
+/** True only for genuine browser views of /for (not pre-warms, not link scanners). */
+const isRealVisit = (event) => {
+  const h = event.headers || {};
+  const ua = h["user-agent"] || "";
+  let host = "";
+  try {
+    host = new URL(h.origin || "").hostname;
+  } catch {
+    return false; // no/!valid Origin -> curl pre-warm or direct hit
+  }
+  return SITE_HOST.test(host) && !BOT_UA.test(ua);
+};
+
+/**
+ * Record one magic-link view. Best effort: never let a tracking failure break
+ * the page. Must run AFTER the page item exists, so the counter is not clobbered
+ * by the page PutItem.
+ */
+const logView = async ({ slug, company, role, cacheHit, event }) => {
+  const h = event.headers || {};
+  const now = new Date();
+  const iso = now.toISOString();
+  await dynamo.send(new PutItemCommand({
+    TableName: VIEWS_TABLE,
+    Item: {
+      slug: { S: slug },
+      ts: { S: iso },
+      company: { S: company },
+      role: { S: role || "" },
+      cacheHit: { BOOL: !!cacheHit },
+      ip: { S: event.requestContext?.http?.sourceIp || "" },
+      ua: { S: (h["user-agent"] || "").slice(0, 300) },
+      referer: { S: (h.referer || h.referrer || "").slice(0, 300) },
+      ttl: { N: String(Math.floor(now.getTime() / 1000) + VIEW_TTL_DAYS * 86400) },
+    },
+  }));
+  await dynamo.send(new UpdateItemCommand({
+    TableName: TABLE,
+    Key: { slug: { S: slug } },
+    UpdateExpression: "ADD #v :one SET lastViewedAt = :now",
+    ExpressionAttributeNames: { "#v": "views" },
+    ExpressionAttributeValues: { ":one": { N: "1" }, ":now": { S: iso } },
+  }));
+};
+
+const track = async (args) => {
+  try {
+    await logView(args);
+  } catch (e) {
+    console.error("view log failed:", e);
+  }
+};
+
 export const handler = async (event) => {
   const headers = {
     "Access-Control-Allow-Origin": "*",
@@ -80,9 +141,12 @@ export const handler = async (event) => {
       return { statusCode: 400, headers, body: JSON.stringify({ error: "Invalid company" }) };
     }
 
+    const real = isRealVisit(event);
+
     // Cache hit → serve instantly, no model call
     const cached = await dynamo.send(new GetItemCommand({ TableName: TABLE, Key: { slug: { S: slug } } }));
     if (cached.Item?.page?.S) {
+      if (real) await track({ slug, company, role, cacheHit: true, event });
       return { statusCode: 200, headers, body: cached.Item.page.S };
     }
 
@@ -117,6 +181,9 @@ RULES:
       TableName: TABLE,
       Item: { slug: { S: slug }, page: { S: payload }, createdAt: { S: new Date().toISOString() } },
     }));
+
+    // After the page item exists, so ADD :views survives the write above.
+    if (real) await track({ slug, company, role, cacheHit: false, event });
 
     console.log(JSON.stringify({ slug, generated: true, usage: response.usage }));
     return { statusCode: 200, headers, body: payload };
