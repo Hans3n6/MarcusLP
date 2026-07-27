@@ -153,11 +153,6 @@ export default function CompanyPage() {
       <main className="min-h-screen w-full bg-cream">
         <div className="max-w-2xl mx-auto px-6 py-24">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-            <img
-              src="/marcus-avatar.jpg"
-              alt="Marcus Hansen"
-              className="w-24 h-24 rounded-full object-cover mb-6 border-4 border-white shadow-[0_2px_16px_rgba(45,42,38,0.12)]"
-            />
             <p className="text-clay uppercase tracking-widest text-sm mb-4 font-medium">
               Marcus Hansen{data.role ? ` · on the ${data.role} role` : ''}
             </p>
