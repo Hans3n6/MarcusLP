@@ -1,20 +1,20 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Stethoscope, HeartHandshake, Code2, ArrowRight } from 'lucide-react';
+import { Rocket, HeartHandshake, Code2, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 const LANES = [
   {
-    href: '/healthcare',
-    icon: Stethoscope,
-    title: 'Healthcare Operations',
-    text: 'Patient access, intake, scheduling, and clinical support. Two years at Sanford Health.',
+    href: '/gtm',
+    icon: Rocket,
+    title: 'GTM Engineer & Customer Success',
+    text: 'I build the AI systems that scale customer relationships, and I own the relationships too.',
   },
   {
     href: '/customer-success',
     icon: HeartHandshake,
-    title: 'Client Success & Implementation',
+    title: 'Implementation & Health-Tech CS',
     text: 'Onboarding, configuration, and training, with healthcare roots and technical fluency.',
   },
   {

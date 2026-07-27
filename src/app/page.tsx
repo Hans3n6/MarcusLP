@@ -27,9 +27,10 @@ export default function Home() {
           { href: '#contact', label: 'Contact' },
         ]}
         recruiterLinks={[
-          { href: '/healthcare', label: 'Healthcare Operations' },
-          { href: '/customer-success', label: 'Client Success & Implementation' },
+          { href: '/gtm', label: 'GTM Engineer & Customer Success' },
+          { href: '/customer-success', label: 'Implementation & Health-Tech CS' },
           { href: '/ai', label: 'Software & AI Engineering' },
+          { href: '/healthcare', label: 'Healthcare Operations' },
         ]}
       />
     </main>

@@ -24,7 +24,11 @@ const iconMap: { [key: string]: any } = {
   'Client Relationships': HeartHandshake,
   'Healthcare Domain Knowledge': Stethoscope,
   'Implementation & Onboarding': Rocket,
-  'Product & Technical Fluency': Zap
+  'Product & Technical Fluency': Zap,
+  'GTM Systems & Automation': Zap,
+  'Customer Success & Retention': HeartHandshake,
+  'GTM Tooling & Data': Database,
+  'Technical Fluency': Code2
 };
 
 export interface Certification {
