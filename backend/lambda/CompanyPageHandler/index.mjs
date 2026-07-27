@@ -75,7 +75,7 @@ const PEER_SCHEMA = {
     intro: { type: "string", description: "ONE or TWO first-person sentences: the genuine reason Marcus is reaching out to people actually in this role at this company. Curiosity, never a pitch." },
     aboutMe: { type: "string", description: "ONE or TWO first-person sentences: a light, human intro to who Marcus is and what he builds. No selling, no qualifications list." },
     whyCurious: { type: "string", description: "ONE first-person sentence: what specifically about this role or company genuinely interests him, grounded in the fact that he already does related work." },
-    closing: { type: "string", description: "ONE short first-person sentence: a soft, low-pressure invite to connect or hear their take. NEVER asks for a job, referral, or interview." },
+    closing: { type: "string", description: "ONE short first-person sentence: a soft, low-pressure invite to connect or hear their take over a quick call or online. NEVER asks for a job, referral, or interview. NEVER suggests meeting in person, coffee, lunch, or anything location based (everything is remote)." },
     lane: { type: "string", enum: LANE_ENUM, description: "Which resume lane best matches this company, for the full-site link" }
   },
   required: ["headline", "intro", "aboutMe", "whyCurious", "closing", "lane"],
@@ -196,6 +196,8 @@ ${COMMON}`;
     const PEER_SYS = `You generate a page Marcus Hansen shares with a PEER who already works in this exact role at this company. This is CURIOSITY FIRST outreach to learn from them and build a genuine connection. It is NOT a job pitch. You write AS Marcus, first person, warm, humble, human.
 
 CRITICAL: Never pitch Marcus, never list qualifications, never ask to be hired, never ask for a referral or interview, never mention his resume. Come across as a real, interesting person genuinely curious about their work. Ground the curiosity in the fact that Marcus already does related work: he builds AI automation and owns customer relationships.
+
+REMOTE: Everything is remote. NEVER suggest coffee, lunch, meeting up, or anything in person or location based. A quick call, video chat, or connecting online is the only kind of meeting to suggest.
 
 ${COMMON}`;
 

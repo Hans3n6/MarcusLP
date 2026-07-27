@@ -10,17 +10,21 @@
 
 `/` is a GENERAL "get to know Marcus" page — deliberately role-neutral (problem-solver framing, story, "Hiring?" router to lanes, contact; no resume download, no GitHub) so a hiring team from ANY lane can land on the bare domain without confusion. Composed of GeneralHero + Story + HiringRouter + Contact + Footer (with `recruiterLinks`).
 
-Job-specific lane pages (mirror the three resume templates in `/Users/marcushansen/Job Hunt/`):
+Job-specific lane pages (`/gtm` is the PRIMARY lane as of 2026-07-27 — Marcus's focus is CSM/GTM startup roles):
 
-| Route | Lane | Template source | Resume PDF | Notes |
+| Route | Lane | Data file | Resume PDF | Notes |
 |---|---|---|---|---|
-| `/ai` | AI / dev | MASTER_REFERENCE.md | `Marcus_Hansen_Resume.pdf` | Full site with Projects section; noindex |
-| `/healthcare` | Healthcare ops | HEALTHCARE_RESUME_TEMPLATE.md | `Marcus_Hansen_Healthcare_Resume.pdf` | Leads 3 Sanford roles; NO GitHub links anywhere (kills flight-risk read); ACSM/BLS certs; noindex |
-| `/customer-success` | CS / implementation / health-tech | CS_HEALTHTECH_RESUME_TEMPLATE.md | `Marcus_Hansen_CS_Resume.pdf` | Trifecta positioning: Admin Ambassadors leads, Sanford consolidated; noindex |
+| `/gtm` | GTM Engineer / CSM (PRIMARY) | `src/data/gtm.ts` | `Marcus_Hansen_CS_Resume.pdf` | "AI systems builder + trusted customer advisor"; Admin Ambassadors leads, then BS&Co GTM automation, then Landmark Transcription ops; noindex |
+| `/ai` | AI / dev | (bare defaults) | `Marcus_Hansen_Resume.pdf` | Full site with Projects section; noindex |
+| `/healthcare` | Healthcare ops | `src/data/healthcare.ts` | `Marcus_Hansen_Healthcare_Resume.pdf` | Leads 3 Sanford roles; NO GitHub links (flight-risk); ACSM/BLS; noindex |
+| `/customer-success` | Implementation / health-tech CS | `src/data/customerSuccess.ts` | `Marcus_Hansen_CS_Resume.pdf` | Healthcare-trifecta positioning; noindex |
 
-Lane pages are reachable from `/` only via the "Hiring?" router and the footer's "For Recruiters" links; applications carry the lane URL directly (AI/dev roles now use `/ai`, not the bare domain). Their data lives in `src/data/healthcare.ts` and `src/data/customerSuccess.ts`; section components (Hero/Experience/About/Story/Contact/Footer) take props with AI-lane defaults, so `/` uses them bare.
+Lane pages are reachable from `/` only via the "Hiring?" router (leads with GTM) and the footer's "For Recruiters" links; applications carry the lane URL directly. Section components (Hero/Experience/About/Story/Contact/Footer) take props with AI-lane defaults, so `/` uses them bare.
 
-**Magic link pages:** `/for?c=<Company>[&r=<Role>]` generates a personalized "Why Marcus fits <Company>" page. Frontend: `src/app/for/page.tsx` + `src/components/CompanyPage.tsx` (loading theater → fit points → lane-matched resume CTA). Backend: `backend/lambda/CompanyPageHandler` — Claude Haiku 4.5 via `ANTHROPIC_API_KEY` env var, structured JSON output, cached in DynamoDB `hws-company-pages` so each company generates once (~$0.005) and repeat visits are instant. Function URL goes in `src/config/companyPage.ts` (empty = offline fallback). Marcus's workflow: when applying, pre-warm with `curl "<url>?c=Company&r=Role"` and put the magic link on the application. See that folder's README for deploy/regenerate commands.
+**Magic link pages — TWO MODES** (`/for?c=<Company>[&r=<Role>][&mode=peer]`). Frontend `src/app/for/page.tsx` + `src/components/CompanyPage.tsx`; backend `backend/lambda/CompanyPageHandler` (Claude Haiku 4.5 via `ANTHROPIC_API_KEY`, structured JSON, DynamoDB cache `hws-company-pages`, ~$0.005/gen, view-tracking to `hws-page-views`). Function URL in `src/config/companyPage.ts`.
+- **pitch mode** (default): "Why Marcus fits <Company>" + 4 fit points + lane-matched resume. For APPLICATIONS and HIRING MANAGERS (funnel phases 2 & 4).
+- **peer mode** (`&mode=peer`): curiosity-first page (headline/intro/aboutMe/whyCurious/soft close), NO pitch, NO resume, NO fit points, LinkedIn-first CTA. For PEER outreach in the humanity funnel (phases 1 & 3) — sending a peer a pitch page breaks the curiosity-first premise. Caches under a `--peer` slug suffix so pitch caches stay intact; legacy pitch pages (no `mode` field) still render as pitch.
+Lane enum is `gtm|cs|ai|healthcare`. Pre-warm per phase: `curl "<url>?c=Company&r=Role"` (pitch) and `curl "<url>?c=Company&r=Role&mode=peer"` (peer). See folder README for deploy/regenerate.
 
 **Dormant:** `backend/lambda/InterviewHandler` + `src/components/InterviewMe.tsx` + `src/config/interview.ts` — a fully built "Interview My AI" persona chatbot (same key/env pattern), intentionally NOT wired into any page. Marcus decided passive magic beats chat interaction; kept in case he wants it later.
 
