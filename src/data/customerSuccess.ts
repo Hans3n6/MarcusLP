@@ -9,15 +9,25 @@ export const hero = {
 
 export const roles: Role[] = [
   {
-    title: 'Cofounder',
+    title: 'Co-Founder & Client Success Lead',
     org: 'Admin Ambassadors',
     dates: '2026 to Present',
     summary:
-      'Cofounded an AI consulting firm serving business clients with a human first approach. Onboard clients, learn their workflows, and configure tailored solutions, including an AI powered system that lets a client query their business data in plain language, then support them day to day through adoption.',
+      'Cofounded an AI consulting firm and own the client relationship end to end. Lead discovery to understand each client\'s goals, run onboarding and implementation, and drive adoption of the solutions we deliver, serving as the primary point of contact throughout. Turn single engagements into ongoing partnerships by delivering measurable outcomes and staying close to each account, coordinating across stakeholders and acting as the trusted advisor clients rely on.',
     highlights: [
       'Serve as the primary point of contact and coordinate across stakeholders',
       'Turn single projects into ongoing partnerships',
       'Pick up new tools and platforms quickly and become the resident expert'
+    ]
+  },
+  {
+    title: 'GTM Engineer',
+    org: 'BS&Co',
+    dates: '2026',
+    summary:
+      'Built the automation systems that powered go to market at a marketing agency, partnering cross functionally with marketing, operations, and leadership. Shipped AI driven tools for content generation, campaign scheduling, and data classification that the team relied on daily.',
+    highlights: [
+      'Turned business goals into shipped, reliable systems people actually used'
     ]
   },
   {

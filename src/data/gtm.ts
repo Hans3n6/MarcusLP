@@ -9,26 +9,26 @@ export const hero = {
 
 export const roles: Role[] = [
   {
-    title: 'Cofounder & Lead AI Engineer',
+    title: 'Co-Founder & Client Success Lead',
     org: 'Admin Ambassadors',
     dates: '2026 to Present',
     summary:
-      'Co-founded an AI consulting firm and do both halves of the GTM-engineer job: build the automations and own the customer. Run discovery, ship AI systems tailored to each client\'s workflow, then stay their primary point of contact through onboarding, adoption, and expansion.',
+      'Cofounded an AI consulting firm and own the client relationship end to end. Lead discovery to understand each client\'s goals, run onboarding and implementation, and drive adoption of the solutions we deliver, serving as the primary point of contact throughout. Turn single engagements into ongoing partnerships by delivering measurable outcomes and staying close to each account, coordinating across stakeholders and acting as the trusted advisor clients rely on.',
     highlights: [
-      'Build AI automations and internal tools that let non-technical teams move faster (Claude API, multi-agent systems, AWS)',
-      'Serve as the trusted advisor: needs analysis, onboarding, training, and day-to-day support',
-      'Turn single projects into ongoing partnerships. Retention through results, not upsell scripts'
+      'Run discovery, onboarding, and implementation, then drive adoption of what we deliver',
+      'Serve as the primary point of contact and trusted advisor across every stakeholder',
+      'Build the systems behind the work too (Claude API, multi-agent architectures, AWS)'
     ]
   },
   {
-    title: 'Full Stack Developer',
+    title: 'GTM Engineer',
     org: 'BS&Co',
     dates: '2026',
     summary:
-      'Built the go-to-market automation a small team ran on. Shipped a multi-agent AI system that drafts and validates marketing copy in daily production, plus a campaign calendar that pulls three data sources, queries Postgres, and auto-generates monthly marketing schedules.',
+      'Built the automation systems that powered GTM at a marketing agency. Shipped AI driven tools for content generation, campaign scheduling, and data classification that drove marketing and sales operations, including a three agent system (Auto Brief) that produces validated email copy and a Campaign Calendar that integrates multiple data sources to auto generate optimized monthly marketing schedules.',
     highlights: [
-      'Integrated multiple data sources and APIs into working GTM tooling',
-      'Translated messy business goals into shipped, reliable systems'
+      'Partnered cross functionally with marketing, operations, and leadership to turn go to market goals into shipped systems',
+      'Executed SEO and AEO work to grow inbound'
     ]
   },
   {
