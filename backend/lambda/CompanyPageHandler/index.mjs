@@ -24,7 +24,7 @@ Prior: GTM Engineer at BS&Co (Jan-May 2026). Built the automation systems that p
 
 Operations / customer: Operations Specialist Associate at Landmark Transcription (2022-2025), fully remote — ran the workflow queue (categorizing and assigning files, driving timely resolution against tight turnaround deadlines), performed quality assurance, managed billing and invoicing, and communicated directly with clients.
 
-Healthcare: PT Aide & ER Secretary at Sanford Health, Bemidji (2022-2024) — two years of high-volume clinical operations, patient registration, triage support, Epic EHR, HIPAA.
+Sanford Bemidji Medical Center (2022-2024), two years. TWO FRAMINGS, pick by lane. For cs, gtm, and ai lanes present this as Support Operations Specialist: the central coordination point in a fast paced, high volume operation, triaging and routing a constant stream of incoming requests to the right people and tracking each one through to resolution, keeping records accurate across multiple systems and communication clear between many stakeholders at once. For the healthcare lane ONLY, use the clinical framing: PT Aide and ER Ward Secretary, high volume clinical operations, patient registration, triage support, Epic EHR, HIPAA. The employer name is always accurate either way.
 
 Projects: Essentials 360 (headless Next.js storefront, PCI-compliant payments, AWS EC2, built at BS&Co); hansenwebservices.com itself including the AI pipeline that generated this very page.
 

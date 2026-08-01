@@ -33,11 +33,11 @@ export const roles: Role[] = [
     ]
   },
   {
-    title: 'PT Aide & ER Secretary',
-    org: 'Sanford Health, Bemidji',
+    title: 'Support Operations Specialist',
+    org: 'Sanford Bemidji Medical Center',
     dates: '2022 to 2024',
     summary:
-      'Managed data and communication systems in a high volume clinical setting, building operational discipline, process awareness, and healthcare workflow understanding.',
+      'Served as the central coordination point in a fast paced, high volume operation, triaging and routing a constant stream of incoming requests to the right people and tracking each one through to resolution. Kept records and information accurate across multiple systems and communication clear between many stakeholders at once.',
     highlights: []
   }
 ];

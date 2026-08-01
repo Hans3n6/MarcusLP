@@ -31,13 +31,13 @@ export const roles: Role[] = [
     ]
   },
   {
-    title: 'Patient Access & Clinical Support',
+    title: 'Support Operations Specialist',
     org: 'Sanford Bemidji Medical Center',
     dates: '2022 to 2024',
     summary:
-      'Worked three roles across a busy medical center, including as an ER ward secretary handling patient registration, scheduling, insurance verification, and records in Epic. Coordinated communication between patients, providers, and departments, and supported patients directly as a triage technician, taking vitals, rooming patients, and performing EKGs.',
+      'Served as the central coordination point in a fast paced, high volume operation, triaging and routing a constant stream of incoming requests to the right people and tracking each one through to resolution. Kept records and information accurate across multiple systems and communication clear between many stakeholders at once.',
     highlights: [
-      'Firsthand understanding of both the operational and clinical sides of a medical practice'
+      'Built the process discipline, attention to detail, and composure under pressure that keep a support operation running smoothly'
     ]
   }
 ];
